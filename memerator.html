@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paskownik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <style>
+
+        body {
+            padding-top: 10px;
+        }
+
+
+        #result {
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #result #img {
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        #settings {
+            margin-top: 20px;
+        }
+
+        .stripText {
+            padding: 3px;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            width: 100%;
+            position: absolute; 
+        }
+
+        .tvp24 #text {
+            bottom: 60px;
+            background-color: #fff;
+            height: 50px;
+            color: #a00;
+            font-size: 20px;
+            text-transform: uppercase;
+            overflow: hidden;
+            font-weight: bold;
+        }
+
+        .tvp24 #subText {
+            bottom: 30px;
+            background-color: #a00;
+            height: 30px;
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .wiadomosci #stripe1 {
+            width: 665px;
+            height: 0;
+            border-top: 45px solid #0488;
+            border-left: 15px solid transparent;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+        }
+
+        .wiadomosci #stripe2 {
+            z-index: 0;
+            width: 650px;
+            height: 0;
+            border-top: 5px solid #48b8;
+            border-left: 2px solid transparent;
+            position: absolute;
+            bottom: 55px;
+            right: 0;
+        }
+
+        .wiadomosci #stripe3 {
+            width: 648px;
+            height: 0;
+            border-top: 10px solid #0488;
+            border-left: 3px solid transparent;
+            position: absolute;
+            bottom: 46px;
+            right: 0;
+        }
+
+        .wiadomosci #wLogo {
+            width: 100px;
+            height: 60px;
+            top: 342px;
+            left: 85px;
+            position: absolute;
+        }
+
+        .wiadomosci #wLogo .dot {
+            position: absolute;
+            box-shadow: 2px 2px 2px black;
+            background: linear-gradient(150deg, rgba(189,240,242,1) 10%, rgba(255,255,255,1) 20%, rgba(163,224,250,1) 30%, rgba(53,95,130,1)50%, rgba(0,0,0,1) 95%);
+            opacity: 0.9;
+            filter: blur(0.5px);
+        }
+
+
+        .wiadomosci #wLogo #row1 .dot {
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 6px;
+        }
+
+        .wiadomosci #wLogo #row2 {
+            top: 12px;
+            left: 5px;
+            position: absolute;
+        }
+
+        .wiadomosci #wLogo #row2 .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+        }
+
+        .wiadomosci #wLogo #row3 {
+            top: 23px;
+            left: 9px;
+            position: absolute;
+        }
+
+        .wiadomosci #wLogo #row3 .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 4px;
+        }
+
+        .wiadomosci #wLogo #row4 {
+            top: 32px;
+            left: 13px;
+            position: absolute;
+        }
+
+        .wiadomosci #wLogo #row4 .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 3px;
+        }
+
+        .wiadomosci #text {
+            z-index: 1;
+            bottom: 64px;
+            height: 40px;
+            width: 600px;
+            left: 136px;
+            color: #fffe;
+            font-size: 24px;
+            text-shadow: 2px 2px 5px black;
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+
+        .wiadomosci #subText {
+            z-index: 1;
+            bottom: 35px;
+            text-align: right;
+            height: 30px;
+            color: #fff;
+            font-size: 12px;
+            text-shadow: 3px 3px 3px black;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-right: 50px;
+        }
+
+        .wiadomosci #tvpLogo {
+            position: absolute;
+            top: 20px;
+            left: 600px;
+        }
+
+        .wiadomosci #tvpLogo .letterWithBorder {
+            color: #fff8;
+            border: 1px solid #fff8;
+            border-right: none;
+            display: inline;
+            padding: 1px 4px 1px 4px;
+            width: 25px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+        }
+
+        .wiadomosci #tvpLogo .letterWithBorder:last-of-type {
+            border-right: 1px solid #fff8;
+        }
+
+        .wiadomosci #tvpLogo .letterWithoutBorder {
+            color: #fff8;
+            display: inline;
+            font-size: 36px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            position: relative;
+            top: 5px;
+        }
+
+        #urlContainer,#url {
+            cursor: pointer
+        }
+
+    </style>
+    
+
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <form id="settings" class="card">
+                <div class="card-block">
+                    <div class="row">
+<!--
+                        <div class="col form-group" id="styleRadio">
+                            <label for="styleRadio">Styl</label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="style form-check-input" type="radio" name="style" value="wiadomosci" id="styleWiadomosci"/>
+                                    Wiadomości
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="style form-check-input" type="radio" name="style" value="tvp24" id="styleTvp24"/>
+                                    TVP 24
+                                </label>
+                            </div>
+                        </div>
+-->
+                        <div class="col form-group" id="backgroundRadio">
+                            <label for="backgroundRadio">Twarz transformacji</label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="background form-check-input" type="radio" name="background" value="krzysztof"/>
+                                    Krzysztof
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="background form-check-input" type="radio" name="background" value="danuta"/>
+                                    Danuta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="background form-check-input" type="radio" name="background" value="michal"/>
+                                    Michał
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="textInput">Przekaz dnia</label>
+                        <div class="input-group">
+                            <input class="form-control" id="textInput" type="text"/>
+                            <div class="input-group-append">
+                              <button class="btn  btn-outline-secondary" id="randomText" type="button" style="cursor: pointer">?</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subTextInput">Przekaz dodatkowy</label>
+                        <div class="input-group">
+                            <input class="form-control" id="subTextInput" type="text"/>
+                            <div class="input-group-append">
+                              <button class="btn  btn-outline-secondary" id="randomSubText" type="button" style="cursor: pointer">?</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="urlContainer" class="form-group">
+                        <label for="url">Adres (kliknij żeby przenieść do schowka)</label>
+                        <input class="form-control" id="url" type="text" readonly="readonly"/>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="col-8">
+            <div style="height: 442px; width: 736px">
+                <div id="result" style="position:absolute">
+                    <img id="img"/>
+
+                    <div id="tvpLogo">
+                        <div class="letterWithBorder">T</div><div class="letterWithBorder">V</div><div class="letterWithBorder">P</div>
+                        <span class="letterWithoutBorder">1</span>
+                    </div>
+
+                    <div class="stripText" id="text"></div>
+                    <div class="stripText" id="subText"></div>
+
+                    <div id="stripe1"></div>
+                    <div id="stripe2"></div>
+                    <div id="stripe3"></div>
+
+                    <div id="wLogo">
+                        <div id="row1">
+                            <div class="dot" style="left: 0"></div>
+                            <div class="dot" style="left: 15px"></div>
+                            <div class="dot" style="left: 30px"></div>
+                        </div>
+                        <div id="row2">
+                            <div class="dot" style="left: 0"></div>
+                            <div class="dot" style="left: 15px"></div>
+                        </div>
+                        <div id="row3">
+                            <div class="dot" style="left: 0"></div>
+                            <div class="dot" style="left: 15px"></div>
+                        </div>
+                        <div id="row4">
+                            <div class="dot" style="left: 0"></div>
+                            <div class="dot" style="left: 15px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script type="application/javascript">
+
+
+    //////////////////////////////////////////
+    // rendering
+    //////////////////////////////////////////
+
+    IMAGES = {
+        krzysztof: "https://s.tvp.pl/images2/9/7/1/uid_971057c37133c34dfcb696998b2bf22a1455982870987_width_736_play_0_pos_0_gs_0_height_442.jpg",
+        danuta: "https://s.tvp.pl/images2/1/0/4/uid_104c854ed7095473d51065acae3312661455982914261_width_736_play_0_pos_0_gs_0_height_442.jpg",
+        michal: "https://s.tvp.pl/images2/4/1/8/uid_4181b04d81a88d837f9f32ba84503a541455982949495_width_736_play_0_pos_0_gs_0_height_442.jpg"
+    };
+
+    function setStyle(aStyle) {
+        style = aStyle;
+        $("#result").attr("class", aStyle);
+        $("input.style[value=" + aStyle + "]").attr("checked", "checked");
+        setNewLocation();
+    }
+
+    function setText(aText) {
+        text = aText;
+        $("#text").text(text);
+        $("#textInput").val(aText);
+        setNewLocation();
+    }
+
+    function setSubText(aText) {
+        subText = aText;
+        $("#subText").text(aText);
+        $("#subTextInput").val(aText);
+        setNewLocation();
+    }
+
+    function setBackground(name) {
+        background = name;
+        $("#img").attr("src", IMAGES[name]);
+        $("input.background[value=" + name + "]").attr("checked", "checked");
+        setNewLocation();
+    }
+
+    function getParam(name, defaultValue) {
+        url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[#&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return defaultValue;
+        if (!results[2]) return defaultValue;
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    function setNewLocation() {
+        url = window.location.href.replace(/#.*/, '');
+        url += "#background=" + encodeURIComponent(background);
+        url += "&text=" + encodeURIComponent(text);
+        url += "&subText=" + encodeURIComponent(subText);
+        url += "&style=" + encodeURIComponent(style);
+
+        window.location.href = url;
+        $("#url").val(url);
+    }
+
+    function copyUrlToClipboard() {
+        $("#url").select();
+        document.execCommand("copy");
+    }
+
+    //////////////////////////////////////////
+    // random text
+    //////////////////////////////////////////
+
+    var ZLY_PODMIOT_LP = ["Donald Tusk", "Tusk", "Merkel", "Juncker", "Ubecja", "Opozycja", "Totalna opozycja", "Bruksela", "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "Kasta sędziów", "Ideologia gender"];
+    var ZLY_PODMIOT_LM = ["Sędziowie", "Esbecy", "Opozycjoniści",
+        "Środowiska LGBT", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Feministki", "Anarchiści",
+        "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści",
+        "Platformersi", "Kodziarze", "UBywatele",
+        "Uchodźcy", "Imigranci"];
+
+    var DOBRY_PODMIOT_LP = ["Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
+        "Państwo", "Naród", "Kościół", "Partia rządząca",
+        "Młodzież", "Społeczeństwo"
+
+    ];
+    var DOBRY_PODMIOT_LM = ["Rządzący", "Obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy"
+    ];
+
+
+    var ZLE_ORZECZENIE_BIERNIK_LP = ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na", "idzie po", "obraża", "okrada", "bezcześci", "blokuje"];
+    var ZLE_ORZECZENIE_BIERNIK_LM = ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują", "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "beszczeszczą", "blokują"];
+
+    var DOBRE_ORZECZENIE_BIERNIK_LP = ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje"];
+    var DOBRE_ORZECZENIE_BIERNIK_LM = ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują"];
+
+
+    var DOBRE_DOPELNIENIE_BIERNIK = ["Polskę", "Ojczyznę", "godło",
+        "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
+        "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską"];
+
+    var ZLE_DOPELNIENIE_BIERNIK = ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
+        "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei",
+        "gwałcicieli", "Tuska", "ubecję", "ideologię gender"];
+
+    function random(words) {
+      return words[randomInt(words.length)] + " "
+    }
+
+    function randomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function zlyPodmiot(isLp) {
+        return random(isLp ? ZLY_PODMIOT_LP : ZLY_PODMIOT_LM)
+    }
+
+    function dobryPodmiot(isLp) {
+        return random(isLp ? DOBRY_PODMIOT_LP : DOBRY_PODMIOT_LM)
+    }
+
+    function zleOrzeczenieBiernik(isLp) {
+        return random(isLp ? ZLE_ORZECZENIE_BIERNIK_LP : ZLE_ORZECZENIE_BIERNIK_LM)
+    }
+
+    function dobreOrzeczenieBiernik(isLp) {
+            return random(isLp ? DOBRE_ORZECZENIE_BIERNIK_LP : DOBRE_ORZECZENIE_BIERNIK_LM)
+        }
+
+    function dobreDopelnienieBiernik() {
+        return random(DOBRE_DOPELNIENIE_BIERNIK)
+    }
+
+
+    function zleDopelnienieBiernik() {
+        return random(ZLE_DOPELNIENIE_BIERNIK)
+    }
+
+    function randomText() {
+        return randomTextWithSpaces().trim()
+    }
+
+    function randomTextWithSpaces() {
+        var liczba = Math.random() < 0.5;
+
+        switch(randomInt(8)) {
+            case 0:
+            case 1:
+            case 2:
+                return zlyPodmiot(liczba) + zleOrzeczenieBiernik(liczba) + dobreDopelnienieBiernik();
+            case 3:
+            case 4:
+            case 5:
+                return zlyPodmiot(liczba) + dobreOrzeczenieBiernik(liczba) + zleDopelnienieBiernik();
+            case 6:
+                return dobryPodmiot(liczba) + dobreOrzeczenieBiernik(liczba) + dobreDopelnienieBiernik();
+            case 7:
+                return dobryPodmiot(liczba) + zleOrzeczenieBiernik(liczba) + zleDopelnienieBiernik();
+        }
+        return "";
+    }
+
+
+
+
+    var style = getParam("style", "wiadomosci");
+    var background = getParam("background", "krzysztof");
+    var text = getParam("text", randomText());
+    var subText = getParam("subText", "Oglądaj na: wiadomosci.tvp.pl");
+
+    $("input.background").click(function(e) {setBackground($(e.target).attr("value"))});
+    $("input.style").click(function(e) {setStyle($(e.target).attr("value"))});
+    $("#urlContainer").click(copyUrlToClipboard);
+    $("#textInput").keyup(function(e) {setText($(e.target).val())});
+    $("#subTextInput").keyup(function(e) {setSubText($(e.target).val())});
+    $("#randomText").click(function(e) {setText(randomText())});
+    $("#randomSubText").click(function(e) {setSubText(randomText())});
+
+    setStyle(style);
+    setBackground(background);
+    setText(text);
+    setSubText(subText);
+    setNewLocation();
+
+
+</script>
+
+</body>
+</html>
