@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=News+Cycle:700" rel="stylesheet">
+
     <style>
 
         body {
@@ -32,9 +33,9 @@
         .stripText {
             padding: 3px;
             box-sizing: border-box;
-            font-family: "Open Sans", sans-serif;
+            font-family: 'News Cycle', sans-serif;
             width: 100%;
-            position: absolute; 
+            position: absolute;
         }
 
         .tvp24 #text {
@@ -63,32 +64,34 @@
         .wiadomosci #stripe1 {
             width: 665px;
             height: 0;
-            border-top: 45px solid #0488;
+            border-top: 45px solid #12234a;
             border-left: 15px solid transparent;
             position: absolute;
             bottom: 60px;
             right: 0;
+            opacity: 0.9;
         }
 
         .wiadomosci #stripe2 {
-            z-index: 0;
+            z-index: 1;
             width: 650px;
             height: 0;
-            border-top: 5px solid #48b8;
-            border-left: 2px solid transparent;
+            border-top: 4px solid #3d5599;
+            border-left: 1px solid transparent;
             position: absolute;
-            bottom: 55px;
+            bottom: 56px;
             right: 0;
         }
 
         .wiadomosci #stripe3 {
             width: 648px;
             height: 0;
-            border-top: 10px solid #0488;
-            border-left: 3px solid transparent;
+            border-top: 14px solid #12234a;
+            border-left: 5px solid transparent;
             position: absolute;
-            bottom: 46px;
+            bottom: 42px;
             right: 0;
+            opacity: 0.9;
         }
 
         .wiadomosci #wLogo {
@@ -102,8 +105,8 @@
         .wiadomosci #wLogo .dot {
             position: absolute;
             box-shadow: 2px 2px 2px black;
-            background: linear-gradient(150deg, rgba(189,240,242,1) 10%, rgba(255,255,255,1) 20%, rgba(163,224,250,1) 30%, rgba(53,95,130,1)50%, rgba(0,0,0,1) 95%);
-            opacity: 0.9;
+            background: linear-gradient(150deg, rgba(189,240,242,1) 10%, rgba(255,255,255,1) 20%, rgba(163,224,250,1) 30%, rgba(53,95,130,1) 50%, rgba(0,0,0,1) 95%);
+            opacity: 1;
             filter: blur(0.5px);
         }
 
@@ -166,7 +169,7 @@
 
         .wiadomosci #subText {
             z-index: 1;
-            bottom: 35px;
+            bottom: 31px;
             text-align: right;
             height: 30px;
             color: #fff;
@@ -185,20 +188,22 @@
 
         .wiadomosci #tvpLogo .letterWithBorder {
             color: #fff8;
-            border: 1px solid #fff8;
+            border: 2px solid #fff8;
             border-right: none;
             display: inline;
-            padding: 1px 4px 1px 4px;
+            padding: 1px 3px 1px 3px;
             width: 25px;
-            height: 30px;
-            font-size: 20px;
+            height: 28px;
+            font-size: 17px;
             text-align: center;
             font-family: "Roboto", sans-serif;
-            font-weight: 900;
+            font-weight: 700;
+            position: relative;
+            top: -1px;
         }
 
         .wiadomosci #tvpLogo .letterWithBorder:last-of-type {
-            border-right: 1px solid #fff8;
+            border-right: 2px solid #fff8;
         }
 
         .wiadomosci #tvpLogo .letterWithoutBorder {
@@ -211,12 +216,29 @@
             top: 5px;
         }
 
+        .wiadomosci #hdLogo {
+            position: absolute;
+            top: 40px;
+            right: 21px;
+            width: 33px;
+        }
+
+        .wiadomosci #hdLogo svg {
+            width:  100%;
+        }
+
+        .wiadomosci #hdLogo .svgLetterWithFill {
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-size: 0.5em;
+        }
+
         #urlContainer,#url {
             cursor: pointer
         }
 
     </style>
-    
+
 
 
 </head>
@@ -225,6 +247,7 @@
 <div class="container">
 
     <div class="row">
+
         <div class="col">
             <form id="settings" class="card">
                 <div class="card-block">
@@ -302,49 +325,61 @@
 
         <div class="col-8">
             <div style="height: 442px; width: 736px">
-                <div id="result" style="position:absolute">
-                    <img id="img"/>
+              <div id="result" style="position:absolute" class="wiadomosci">
+                <img id="img"/>
 
-                    <div id="tvpLogo">
-                        <div class="letterWithBorder">T</div><div class="letterWithBorder">V</div><div class="letterWithBorder">P</div>
-                        <span class="letterWithoutBorder">1</span>
+                <div id="tvpLogo">
+                    <div class="letterWithBorder">T</div><div class="letterWithBorder">V</div><div class="letterWithBorder">P</div>
+                    <span class="letterWithoutBorder">1</span>
+                </div>
+                <div id="hdLogo">
+                    <svg viewBox="0 0 17 10">
+                      <defs>
+                        <mask id="maskH" x="0" y="0" width="20" height="20">
+                          <rect x="0" y="0" width="8" height="10" fill="#fff"></rect>
+                          <text text-anchor="middle" x="4" y="7" dy="1" class="svgLetterWithFill" fill="">H</text>
+                        </mask>
+                        <mask id="maskD" x="0" y="0" width="20" height="20">
+                          <rect x="9" y="0" width="8" height="10" fill="#fff"></rect>
+                          <text text-anchor="middle" x="13" y="7" dy="1" class="svgLetterWithFill" fill="">D</text>
+                        </mask>
+                      </defs>
+                      <rect x="0" y="0" width="8" height="10" mask="url(#maskH)" fill-opacity="0.6" fill="#fff"></rect>
+                      <rect x="9" y="0" width="8" height="10" mask="url(#maskD)" fill-opacity="0.6" fill="#fff"></rect>
+                    </svg>
+                </div>
+
+                <div class="stripText" id="text">4 czerwca symbolem zdrady elit</div>
+                <div class="stripText" id="subText">Oglądaj na: wiadomosci.tvp.pl</div>
+
+                <div id="stripe1"></div>
+                <div id="stripe2"></div>
+                <div id="stripe3"></div>
+
+                <div id="wLogo">
+                    <div id="row1">
+                        <div class="dot" style="left: 0"></div>
+                        <div class="dot" style="left: 15px"></div>
+                        <div class="dot" style="left: 30px"></div>
                     </div>
-
-                    <div class="stripText" id="text"></div>
-                    <div class="stripText" id="subText"></div>
-
-                    <div id="stripe1"></div>
-                    <div id="stripe2"></div>
-                    <div id="stripe3"></div>
-
-                    <div id="wLogo">
-                        <div id="row1">
-                            <div class="dot" style="left: 0"></div>
-                            <div class="dot" style="left: 15px"></div>
-                            <div class="dot" style="left: 30px"></div>
-                        </div>
-                        <div id="row2">
-                            <div class="dot" style="left: 0"></div>
-                            <div class="dot" style="left: 15px"></div>
-                        </div>
-                        <div id="row3">
-                            <div class="dot" style="left: 0"></div>
-                            <div class="dot" style="left: 15px"></div>
-                        </div>
-                        <div id="row4">
-                            <div class="dot" style="left: 0"></div>
-                            <div class="dot" style="left: 15px"></div>
-                        </div>
+                    <div id="row2">
+                        <div class="dot" style="left: 0"></div>
+                        <div class="dot" style="left: 15px"></div>
+                    </div>
+                    <div id="row3">
+                        <div class="dot" style="left: 0"></div>
+                        <div class="dot" style="left: 15px"></div>
+                    </div>
+                    <div id="row4">
+                        <div class="dot" style="left: 0"></div>
+                        <div class="dot" style="left: 15px"></div>
                     </div>
                 </div>
             </div>
-
+          </div>
         </div>
 
     </div>
-
-
-
 
 </div>
 
