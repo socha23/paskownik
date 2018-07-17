@@ -783,9 +783,9 @@
         return randomInt(mCount + fCount) < mCount ? M : F;
     }
 
-    function losowaLiczba(podmioty) {
-        let lpCount = podmioty.lp.m.length + podmioty.lp.f.length;
-        let lmCount = podmioty.lm.m.length + podmioty.lm.f.length;
+    function losowaLiczba(podmioty, rodzaj) {
+        let lpCount = podmioty.lp[rodzaj].length;
+        let lmCount = podmioty.lm[rodzaj].length;
         return randomInt(lpCount + lmCount) < lpCount ? LP : LM;
     }
 
@@ -839,7 +839,7 @@
 
     function randomTextZlyPodmiot() {
         let rodzaj = losowyRodzaj(ZLY_PODMIOT);
-        let liczba = losowaLiczba(ZLY_PODMIOT);
+        let liczba = losowaLiczba(ZLY_PODMIOT, rodzaj);
         let przypadek = "biernik";
         let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
 
