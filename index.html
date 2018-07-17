@@ -225,6 +225,10 @@
     <div class="row">
 
         <div class="col">
+            <button class="btn btn-success btn-block btn-lg randomizeOnClick" style="cursor: pointer" id="randomize">
+                Następny pasek
+            </button>
+
             <form id="settings" class="card">
                 <div class="card-block">
                     <div class="row">
@@ -246,7 +250,11 @@
                         </div>
 -->
                         <div class="col form-group" id="backgroundRadio">
-                            <label for="backgroundRadio">Twarz transformacji</label>
+                            <label for="backgroundRadio">
+                                Twarz transformacji
+                                <button class="btn  btn-outline-secondary" id="randomBackground" style="margin-left: 10px; cursor: pointer">?</button>
+
+                            </label>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
@@ -340,7 +348,7 @@
 
         <div class="col-8">
             <div style="height: 442px; width: 736px">
-              <div id="result" style="position:absolute" class="wiadomosci">
+              <div id="result" style="position:absolute" class="wiadomosci randomizeOnClick">
                 <img id="img"/>
 
                 <div id="tvpLogo">
@@ -417,6 +425,11 @@
         malgorzata: "https://s.tvp.pl/images2/0/7/8/uid_07894b16bb0bc7045d8350e91eb335871473181354332_width_736_play_0_pos_0_gs_0_height_442.jpg",
     };
 
+    function randomElem(list) {
+      return list[randomInt(list.length)]
+    }
+
+
     function setStyle(aStyle) {
         style = aStyle;
         $("#result").attr("class", aStyle);
@@ -469,6 +482,24 @@
     function copyUrlToClipboard() {
         $("#url").select();
         document.execCommand("copy");
+    }
+
+    function randomBackground() {
+        return randomElem(Object.keys(IMAGES));
+    }
+
+    function setRandomBackground() {
+        let nextBackground = randomBackground();
+        // we want to make sure the background will always be changed
+        while (nextBackground === background) {
+            nextBackground = randomBackground()
+        }
+        setBackground(nextBackground)
+    }
+
+    function randomize() {
+        setText(randomText());
+        setRandomBackground();
     }
 
     //////////////////////////////////////////
@@ -543,7 +574,7 @@
 
 
     function random(words) {
-      return words[randomInt(words.length)] + " "
+      return randomElem(words) + " "
     }
 
     function randomInt(max) {
@@ -580,7 +611,7 @@
     }
 
     function randomTextWithSpaces() {
-        var liczba = random(["lp", "lm"]).trim();
+        var liczba = randomElem(["lp", "lm"]);
         var przypadek = "biernik";
 
         switch(randomInt(6)) {
@@ -613,6 +644,9 @@
     $("#subTextInput").keyup(function(e) {setSubText($(e.target).val())});
     $("#randomText").click(function(e) {setText(randomText())});
     $("#randomSubText").click(function(e) {setSubText(randomText())});
+    $("#randomBackground").click(function(e) {setRandomBackground()});
+
+    $(".randomizeOnClick").click(function(e) {randomize()});
 
     setStyle(style);
     setBackground(background);
