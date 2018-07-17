@@ -527,6 +527,7 @@
     JUTRO = "jutro";
 
     BIERNIK = "biernik";
+    DOPELNIACZ = "dopelniacz";
 
     M = "m";
     F = "f";
@@ -536,7 +537,7 @@
 
     ZLY_PODMIOT = {
         lp: {
-            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ"],
+            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ", "czarny protest", "TW Bolek"],
             f: ["Merkel", "ubecja", "opozycja", "totalna opozycja", "Bruksela",
                 "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "kasta sędziów", "ideologia gender", "Gazeta Wyborcza", "TVN"]
         },
@@ -547,7 +548,7 @@
                 "Platformersi", "Kodziarze", "UBywatele", "Totalni", "Aferzyści",
                 "Uchodźcy", "Imigranci", "Niemcy", "Islamiści", "Wrogowie Polski", "Zboczeńcy",
                 "Prowokatorzy", "Postkomuniści", "Pogrobowcy komuny", "Byli agenci bezpieki",
-                "Degeneraci", 
+                "Degeneraci",
 
             ],
             f: [
@@ -570,7 +571,7 @@
         },
         lm: {
             m: [
-                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS",
+                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS", "patrioci", "przyjaciele Polski",
             ],
             f: [
                 "Rodziny Radia Maryja", "kluby Gazety Polskiej",
@@ -619,26 +620,74 @@
 
             dzis: {
                 lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
-                    "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "udaje", "ostrzega", "straszy",
+                    "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "ostrzega", "straszy",
                     "godzi w", "prowokuje", "oczernia", "karci", "krzyczy na", "ciemięży",
 
                 ],
                 lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
                     "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "bezczeszczą", "blokują", "okłamują", "oszukują",
-                    "udają", "ostrzegają", "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą",
+                    "ostrzegają", "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą",
+                ]
+            },
+
+            jutro: {
+                lp: ["zniszczy", "zabije", "oskarży", "zhańbi", "zszarga", "zgwałci", "zaatakuje", "doniesie na",
+                    "pójdzie po", "obrazi", "okradnie", "zbezcześci", "zablokuje", "okłamie", "oszuka", "ostrzeże", "nastraszy",
+                    "sprowokuje", "oczerni", "skarci", "uciemięży",
+
+                ],
+                lm: ["zniszczą", "zabiją", "oskarżą", "zwalczą", "zhańbią", "zszargają", "zgwałcą", "zaatakują",
+                    "doniosą na", "pójdą po", "obrażą", "ukradną", "okradną", "skalają", "zbezczeszczą", "zablokują", "okłamią", "oszukają",
+                    "ostrzegą", "nastraszą", "ugodzą w", "sprowokują", "oczernią", "skarcą", "uciemiężą",
                 ]
             }
+
         }
     };
 
+    DOBRYM_CZYMS = ["podstawą", "opoką", "gwarancją", "nadzieją", "ratunkiem", "chlubą", "dumą", "przyjacielem", "sukcesem"];
+    ZLYM_CZYMS = ["zakałą", "wrogiem", "nemesis", "zgubą", "zagładą", "oponentem", "przekleństwem", "porażką"];
+
     DOBRE_ORZECZENIE = {
         biernik: {
-            lp: ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje", "poleca", "wspomaga", "wzmacnia",
-                "zachęca", "sponsoruje", "finansuje", "subsydiuje", "zasila"
-            ],
-            lm: ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują", "polecają", "wspomagają",
-                "wzmacniają", "zachęcają", "sponsorują", "finansują", "subsydiują", "zasilają"
-            ]
+            wczoraj: {
+                lp: {
+                    m: ["poparł", "wsparł", "opłacał", "opłacił", "chwalił", "pochwalił", "nagradzał", "nagrodził",
+                        "uratował", "polecał", "wspomógł", "wzmocnił",
+                        "zachęcał", "zachęcił", "sponsorował", "finansował", "subsydiował", "zasilał"
+                    ],
+                    f: ["poparła", "wsparła", "opłacała", "opłaciła", "chwaliła", "pochwaliła", "nagradzała", "nagrodziła",
+                        "uratowała", "polecała", "wspomogła", "wzmocniła",
+                        "zachęcała", "zachęciła", "sponsorowała", "finansowała", "subsydiowała", "zasilała"
+                    ],
+                },
+                lm: {
+                    m: ["poparli", "wsparli", "opłacali", "opłacili", "chwalili", "pochwalili", "nagradzali", "nagrodzili",
+                        "uratowali", "polecali", "wspomogli", "wzmocnili",
+                        "zachęcali", "zachęcili", "sponsorowali", "finansowali", "subsydiowali", "zasilali"
+                    ],
+                    f: ["poparły", "wsparły", "opłacały", "opłaciły", "chwaliły", "pochwaliły", "nagradzały", "nagrodziły",
+                        "uratowały", "polecały", "wspomogły", "wzmocniły",
+                        "zachęcały", "zachęciły", "sponsorowały", "finansowały", "subsydiowały", "zasilały"
+                    ],
+                }
+            },
+            dzis: {
+                lp: ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje", "poleca", "wspomaga", "wzmacnia",
+                    "zachęca", "sponsoruje", "finansuje", "subsydiuje", "zasila"
+                ],
+                lm: ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują", "polecają", "wspomagają",
+                    "wzmacniają", "zachęcają", "sponsorują", "finansują", "subsydiują", "zasilają"
+                ]
+            },
+            jutro: {
+                lp: ["poprze", "wesprze", "opłaci", "pochwali", "nagrodzi", "uratuje", "poleci", "wspomoże", "wzmocni",
+                    "zachęci", "zasponsoruje", "sfinansuje", "zasubsydiuje", "zasili"
+                ],
+                lm: ["poprą", "wesprą", "opłacą", "pochwalą", "nagrodzą", "uratują", "polecą", "wspomogą",
+                    "wzmocnią", "zachęcą", "zasponsorują", "sfinansują", "zasubsydiują", "zasilą"
+                ]
+            }
         }
     };
 
@@ -649,6 +698,13 @@
             "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny",
             "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "prawo", "ład publiczny",
             "TVP", "Telewizję Polską", "dobrych ludzi", "normalnych ludzi", "tysiące Polaków", "miliony Polaków"
+        ],
+        dopelniacz: ["Polski", "Ojczyzny", "godła",
+            "społeczeństwa", "obywateli", "Polaków", "polskich kobiet",
+            "naszych dzieci", "nienarodzonych dzieci", "Narodu", "gospodarki", "reform", "Krzyża", "Kościoła", "Papieża", "Matki Boskiej",
+            "najuboższych", "emerytów", "rencistów", "wielodzietnych rodzin", "katolickich rodzin", "normalnych rodzin",
+            "wzrostu gospodarczego", "wskaźników ekonomicznych", "konstytucji", "prawa", "ładu publicznego",
+            "TVP", "Telewizji Polskiej", "dobrych ludzi", "normalnych ludzi", "tysięcy Polaków", "milionów Polaków"
         ]
     };
 
@@ -658,21 +714,29 @@
             "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
             "bezrobocie", "dług publiczny", "zadłużenie", "biedę",
             "kolesiów", "byłych agentów", "cywilizację śmierci", "kraje zachodu", "zachodnią europę",
-            "media polskojęzyczne",
+            "media polskojęzyczne", "czarny protest", "stalinowskich sędziów"
+        ],
+        dopelniacz: ["Unii", "Izraela", "zachodu", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
+            "ateistów", "feministek", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistycznych złogów", "złodziejstwa", "złodziei", "aferzystów",
+            "gwałcicieli", "Tuska", "ubecji", "ideologii gender",
+            "bezrobocia", "długu publicznego", "zadłużenia", "biedy",
+            "kolesiów", "byłych agentów", "cywilizacji śmierci", "krajów zachodu", "zachodniej europy",
+            "mediów polskojęzycznych", "czarnego protestu", "stalinowskich sędziów"
         ]
+
     };
 
 
     deduplicateQueue = []; // queue with last random words so we don't generate duplicates
-    deduplicateQueueMaxSize = 15;
+    deduplicateQueueMaxSize = 20;
+    deduplicatePrefixSize = 5;
 
     function random(words) {
         let word = randomElem(words);
-        while (deduplicateQueue.includes(word)) {
+        while (deduplicateQueue.includes(word.substring(0, deduplicatePrefixSize))) {
             word = randomElem(words)
         }
-
-        deduplicateQueue.push(word);
+        deduplicateQueue.push(word.substring(0, deduplicatePrefixSize));
         if (deduplicateQueue.length > deduplicateQueueMaxSize) {
             deduplicateQueue.shift()
         }
@@ -712,16 +776,20 @@
         return podmiot(DOBRY_PODMIOT, liczba, rodzaj);
     }
 
-    function zleOrzeczenie(liczba, przypadek, czas, rodzaj) {
+    function orzeczenie(orzeczenia, liczba, przypadek, czas, rodzaj) {
         if (czas === WCZORAJ) {
-            return random(ZLE_ORZECZENIE[przypadek].wczoraj[liczba][rodzaj])
+            return random(orzeczenia[przypadek].wczoraj[liczba][rodzaj])
         } else {
-            return random(ZLE_ORZECZENIE[przypadek].dzis[liczba])
+            return random(orzeczenia[przypadek][czas][liczba])
         }
     }
 
-    function dobreOrzeczenie(liczba, przypadek) {
-        return random(DOBRE_ORZECZENIE[przypadek][liczba])
+    function zleOrzeczenie(liczba, przypadek, czas, rodzaj) {
+        return orzeczenie(ZLE_ORZECZENIE, liczba, przypadek, czas, rodzaj)
+    }
+
+    function dobreOrzeczenie(liczba, przypadek, czas, rodzaj) {
+        return orzeczenie(DOBRE_ORZECZENIE, liczba, przypadek, czas, rodzaj)
     }
 
     function dobreDopelnienie(przypadek) {
@@ -744,10 +812,16 @@
         let rodzaj = losowyRodzaj(ZLY_PODMIOT);
         let liczba = losowaLiczba(ZLY_PODMIOT);
         let przypadek = "biernik";
-        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS]);
+        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
 
-        if (Math.random() < 0.3) {
-            return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
+        let k = Math.random();
+
+        if (k < 0.1) {
+            return zlyPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
+        } else if (k < 0.2) {
+            return zlyPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
+        } else if (k < 0.7) {
+            return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
         } else {
             return zlyPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
         }
@@ -757,12 +831,18 @@
         let rodzaj = losowyRodzaj(DOBRY_PODMIOT);
         let liczba = losowaLiczba(DOBRY_PODMIOT);
         let przypadek = "biernik";
-        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS]);
+        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
 
-        if (Math.random() < 0.3) {
+        let k = Math.random();
+
+        if (k < 0.1) {
+            return dobryPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
+        } else if (k < 0.2) {
+            return dobryPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
+        } else if (k < 0.7) {
             return dobryPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
         } else {
-            return dobryPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
+            return dobryPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
         }
     }
 
