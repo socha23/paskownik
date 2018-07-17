@@ -431,9 +431,6 @@
     // random text
     //////////////////////////////////////////
 
-    LP = "lp";
-    LM = "lm";
-
     WCZORAJ = "wczoraj";
     DZIS = "dzis";
     JUTRO = "jutro";
@@ -465,7 +462,7 @@
     ZLE_ORZECZENIE = {
         biernik: {
             lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
-                "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "okłamują"],
+                "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje"],
             lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
                 "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "beszczeszczą", "blokują", "okłamują", "oszukują"]
         }
@@ -486,14 +483,16 @@
         biernik: ["Polskę", "Ojczyznę", "godło",
                 "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
                 "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
-                "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny"
+                "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny",
+                "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "prawo", "spokój publiczny",
         ]
     };
 
     ZLE_DOPELNIENIE = {
         biernik: ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-                "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei",
-                "gwałcicieli", "Tuska", "ubecję", "ideologię gender"
+                "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei", "aferzystów",
+                "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
+                "bezrobocie", "dług publiczny", "zadłużenie", "biedę",
         ]
     };
 
@@ -508,6 +507,7 @@
 
     function zlyPodmiot(liczba) {
         return random(ZLY_PODMIOT[liczba])
+
     }
 
     function dobryPodmiot(liczba) {
@@ -527,7 +527,7 @@
     }
     
     function zleDopelnienie(przypadek) {
-        return random(ZLE_DOPELNIENIE_BIERNIK)
+        return random(ZLE_DOPELNIENIE[przypadek])
     }
 
     function randomText() {
@@ -535,7 +535,7 @@
     }
 
     function randomTextWithSpaces() {
-        var liczba = random([LP, LM]);
+        var liczba = random(["lp", "lm"]).trim();
         var przypadek = "biernik";
 
         switch(randomInt(6)) {
