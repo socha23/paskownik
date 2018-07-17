@@ -431,36 +431,72 @@
     // random text
     //////////////////////////////////////////
 
-    var ZLY_PODMIOT_LP = ["Donald Tusk", "Tusk", "Merkel", "Juncker", "Ubecja", "Opozycja", "Totalna opozycja", "Bruksela", "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "Kasta sędziów", "Ideologia gender"];
-    var ZLY_PODMIOT_LM = ["Sędziowie", "Esbecy", "Opozycjoniści",
-        "Środowiska LGBT", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Feministki", "Anarchiści",
-        "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści",
-        "Platformersi", "Kodziarze", "UBywatele",
-        "Uchodźcy", "Imigranci"];
+    LP = "lp";
+    LM = "lm";
 
-    var DOBRY_PODMIOT_LP = ["Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
-        "Państwo", "Naród", "Kościół", "Partia rządząca",
-        "Młodzież", "Społeczeństwo"
+    WCZORAJ = "wczoraj";
+    DZIS = "dzis";
+    JUTRO = "jutro";
 
-    ];
-    var DOBRY_PODMIOT_LM = ["Rządzący", "Obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy"
-    ];
+    BIERNIK = "biernik";
 
+    ZLY_PODMIOT = {
+        lp: ["Donald Tusk", "Tusk", "Merkel", "Juncker", "Ubecja", "Opozycja", "Totalna opozycja", "Bruksela",
+            "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "Kasta sędziów", "Ideologia gender",
+            "Gazeta Wyborcza"
+        ],
+        lm: ["Sędziowie", "Esbecy", "Opozycjoniści",
+                "Środowiska LGBT", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Feministki", "Anarchiści",
+                "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści", "Polskojęzyczne media", 
+                "Platformersi", "Kodziarze", "UBywatele",
+                "Uchodźcy", "Imigranci",
+        ]
+    };
 
-    var ZLE_ORZECZENIE_BIERNIK_LP = ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na", "idzie po", "obraża", "okrada", "bezcześci", "blokuje"];
-    var ZLE_ORZECZENIE_BIERNIK_LM = ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują", "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "beszczeszczą", "blokują"];
+    DOBRY_PODMIOT = {
+        lp: ["Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
+                "Państwo", "Naród", "Kościół", "Partia rządząca",
+                "Młodzież", "Społeczeństwo"
+            ],
+        lm: ["Rządzący", "Obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy"
+            ]
+    };
 
-    var DOBRE_ORZECZENIE_BIERNIK_LP = ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje"];
-    var DOBRE_ORZECZENIE_BIERNIK_LM = ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują"];
+    ZLE_ORZECZENIE = {
+        biernik: {
+            lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
+                "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "okłamują"],
+            lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
+                "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "beszczeszczą", "blokują", "okłamują", "oszukują"]
+        }
+    };
 
+    DOBRE_ORZECZENIE = {
+        biernik: {
+            lp: ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje", "poleca", "wspomaga", "wzmacnia",
+                "buduje", "pokrzepia", "zachęca", "sponsoruje", "finansuje", "dźwiga", "subsydiuje", "zasila"
+            ],
+            lm: ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują", "polecają", "wspomagają",
+                "wzmacniają", "budują", "pokrzepiają", "zachęcają", "sponsorują", "finansują", "dźwigają", "subsydiują", "zasilają"
+            ]
+        }
+    };
 
-    var DOBRE_DOPELNIENIE_BIERNIK = ["Polskę", "Ojczyznę", "godło",
-        "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
-        "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską"];
+    DOBRE_DOPELNIENIE = {
+        biernik: ["Polskę", "Ojczyznę", "godło",
+                "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
+                "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
+                "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny"
+        ]
+    };
 
-    var ZLE_DOPELNIENIE_BIERNIK = ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-        "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei",
-        "gwałcicieli", "Tuska", "ubecję", "ideologię gender"];
+    ZLE_DOPELNIENIE = {
+        biernik: ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
+                "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei",
+                "gwałcicieli", "Tuska", "ubecję", "ideologię gender"
+        ]
+    };
+
 
     function random(words) {
       return words[randomInt(words.length)] + " "
@@ -470,28 +506,27 @@
       return Math.floor(Math.random() * Math.floor(max));
     }
 
-    function zlyPodmiot(isLp) {
-        return random(isLp ? ZLY_PODMIOT_LP : ZLY_PODMIOT_LM)
+    function zlyPodmiot(liczba) {
+        return random(ZLY_PODMIOT[liczba])
     }
 
-    function dobryPodmiot(isLp) {
-        return random(isLp ? DOBRY_PODMIOT_LP : DOBRY_PODMIOT_LM)
+    function dobryPodmiot(liczba) {
+        return random(DOBRY_PODMIOT[liczba])
     }
 
-    function zleOrzeczenieBiernik(isLp) {
-        return random(isLp ? ZLE_ORZECZENIE_BIERNIK_LP : ZLE_ORZECZENIE_BIERNIK_LM)
+    function zleOrzeczenie(liczba, przypadek) {
+        return random(ZLE_ORZECZENIE[przypadek][liczba])
     }
 
-    function dobreOrzeczenieBiernik(isLp) {
-            return random(isLp ? DOBRE_ORZECZENIE_BIERNIK_LP : DOBRE_ORZECZENIE_BIERNIK_LM)
+    function dobreOrzeczenie(liczba, przypadek) {
+            return random(DOBRE_ORZECZENIE[przypadek][liczba])
         }
 
-    function dobreDopelnienieBiernik() {
-        return random(DOBRE_DOPELNIENIE_BIERNIK)
+    function dobreDopelnienie(przypadek) {
+        return random(DOBRE_DOPELNIENIE[przypadek])
     }
-
-
-    function zleDopelnienieBiernik() {
+    
+    function zleDopelnienie(przypadek) {
         return random(ZLE_DOPELNIENIE_BIERNIK)
     }
 
@@ -500,21 +535,20 @@
     }
 
     function randomTextWithSpaces() {
-        var liczba = Math.random() < 0.5;
+        var liczba = random([LP, LM]);
+        var przypadek = "biernik";
 
-        switch(randomInt(8)) {
+        switch(randomInt(6)) {
             case 0:
             case 1:
+                return zlyPodmiot(liczba) + zleOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
             case 2:
-                return zlyPodmiot(liczba) + zleOrzeczenieBiernik(liczba) + dobreDopelnienieBiernik();
             case 3:
+                return zlyPodmiot(liczba) + dobreOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
             case 4:
+                return dobryPodmiot(liczba) + dobreOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
             case 5:
-                return zlyPodmiot(liczba) + dobreOrzeczenieBiernik(liczba) + zleDopelnienieBiernik();
-            case 6:
-                return dobryPodmiot(liczba) + dobreOrzeczenieBiernik(liczba) + dobreDopelnienieBiernik();
-            case 7:
-                return dobryPodmiot(liczba) + zleOrzeczenieBiernik(liczba) + zleDopelnienieBiernik();
+                return dobryPodmiot(liczba) + zleOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
         }
         return "";
     }
