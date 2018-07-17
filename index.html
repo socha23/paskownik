@@ -744,7 +744,7 @@
         let rodzaj = losowyRodzaj(ZLY_PODMIOT);
         let liczba = losowaLiczba(ZLY_PODMIOT);
         let przypadek = "biernik";
-        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS]);
+        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS]);
 
         if (Math.random() < 0.3) {
             return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
