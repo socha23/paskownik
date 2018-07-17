@@ -433,7 +433,7 @@
     function setStyle(aStyle) {
         style = aStyle;
         $("#result").attr("class", aStyle);
-        $("input.style[value=" + aStyle + "]").attr("checked", "checked");
+        $("input.style[value=" + aStyle + "]").prop("checked", true);
         setNewLocation();
     }
 
@@ -454,7 +454,8 @@
     function setBackground(name) {
         background = name;
         $("#img").attr("src", IMAGES[name]);
-        $("input.background[value=" + name + "]").attr("checked", "checked");
+        $("input.background").prop("checked", false);
+        $("input.background[value=" + name + "]").prop("checked", true);
         setNewLocation();
     }
 
