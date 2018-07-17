@@ -857,7 +857,7 @@
 
     function randomTextDobryPodmiot() {
         let rodzaj = losowyRodzaj(DOBRY_PODMIOT);
-        let liczba = losowaLiczba(DOBRY_PODMIOT);
+        let liczba = losowaLiczba(DOBRY_PODMIOT, rodzaj);
         let przypadek = "biernik";
         let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
 
