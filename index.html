@@ -537,9 +537,12 @@
 
     ZLY_PODMIOT = {
         lp: {
-            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ", "czarny protest", "TW Bolek"],
+            // nijakie "pokolenie róbta co chceta"
+            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ", "czarny protest", "TW Bolek", "Owsiak"],
             f: ["Merkel", "ubecja", "opozycja", "totalna opozycja", "Bruksela",
-                "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "kasta sędziów", "ideologia gender", "Gazeta Wyborcza", "TVN"]
+                "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "kasta sędziów", "ideologia gender", "Gazeta Wyborcza", "TVN",
+                "kawiorowa lewica", "pogańska europa", "WOŚP"
+            ]
         },
         lm: {
             m: [
@@ -547,12 +550,15 @@
                 "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści",
                 "Platformersi", "Kodziarze", "UBywatele", "Totalni", "Aferzyści",
                 "Uchodźcy", "Imigranci", "Niemcy", "Islamiści", "Wrogowie Polski", "Zboczeńcy",
-                "Prowokatorzy", "Postkomuniści", "Pogrobowcy komuny", "Byli agenci bezpieki",
-                "Degeneraci",
+                "prowokatorzy", "postkomuniści", "pogrobowcy komuny", "byli agenci bezpieki",
+                "degeneraci", "chuligani", "antypolscy dziennikarze", "młodzi lekarze", "'artyści'",
+                "narkomani",
+                
 
             ],
             f: [
-                "Środowiska LGBT", "Feministki", "Polskojęzyczne media", "Zdradzieckie mordy", "Łże-elity",
+                "środowiska LGBT", "feministki", "polskojęzyczne media", "zdradzieckie mordy", "łże-elity", "bezdzietne kobiety",
+                
             ]
         }
     };
@@ -561,20 +567,22 @@
         lp: {
             // nijakie "Społeczeństwo" i "Państwo"
             m: [
-                "Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
-                "Naród", "Kościół",
+                "Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán", "Pan Kurski",
+                "Naród", "Kościół", "minister", "poseł"
             ],
             f: [
-                "Partia rządząca", "Młodzież", "TVP",
-                "Komisja", "Speckomisja", "Komisja sejmowa", "KRRiT", "Rada Etyki Mediów"
+                "Partia rządząca", "Młodzież", "TVP", "posłanka",
+                "Komisja", "Speckomisja", "Komisja sejmowa", "KRRiT", "Rada Etyki Mediów",
+                "polonia z Chicago", "rada ministrów", "kancelaria prezydenta", 
             ]
         },
         lm: {
             m: [
-                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS", "patrioci", "przyjaciele Polski",
+                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS",
+                "patrioci", "przyjaciele Polski", "myśliwi", "hodowcy", "rolnicy", "górnicy", "robotnicy", "prawdziwi artyści"
             ],
             f: [
-                "Rodziny Radia Maryja", "kluby Gazety Polskiej",
+                "Rodziny Radia Maryja", "kluby Gazety Polskiej", "matki", "matki Polki"
             ]
         }
     };
@@ -621,12 +629,12 @@
             dzis: {
                 lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
                     "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "ostrzega", "straszy",
-                    "godzi w", "prowokuje", "oczernia", "karci", "krzyczy na", "ciemięży",
+                    "godzi w", "prowokuje", "oczernia", "karci", "krzyczy na", "ciemięży", "gani"
 
                 ],
                 lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
                     "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "bezczeszczą", "blokują", "okłamują", "oszukują",
-                    "ostrzegają", "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą",
+                    "ostrzegają", "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą", "ganią",
                 ]
             },
 
@@ -646,7 +654,7 @@
     };
 
     DOBRYM_CZYMS = ["podstawą", "opoką", "gwarancją", "nadzieją", "ratunkiem", "chlubą", "dumą", "przyjacielem", "sukcesem"];
-    ZLYM_CZYMS = ["zakałą", "wrogiem", "nemesis", "zgubą", "zagładą", "oponentem", "przekleństwem", "porażką"];
+    ZLYM_CZYMS = ["zakałą", "wrogiem", "to nemesis", "zgubą", "zagładą", "oponentem", "przekleństwem", "porażką"];
 
     DOBRE_ORZECZENIE = {
         biernik: {
@@ -697,29 +705,31 @@
             "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
             "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny",
             "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "prawo", "ład publiczny",
-            "TVP", "Telewizję Polską", "dobrych ludzi", "normalnych ludzi", "tysiące Polaków", "miliony Polaków"
+            "TVP", "Telewizję Polską", "dobrych ludzi", "normalnych ludzi", "tysiące Polaków", "miliony Polaków",
+            "500+", "młodych patriotów", "wrak tupolewa",
         ],
         dopelniacz: ["Polski", "Ojczyzny", "godła",
             "społeczeństwa", "obywateli", "Polaków", "polskich kobiet",
             "naszych dzieci", "nienarodzonych dzieci", "Narodu", "gospodarki", "reform", "Krzyża", "Kościoła", "Papieża", "Matki Boskiej",
             "najuboższych", "emerytów", "rencistów", "wielodzietnych rodzin", "katolickich rodzin", "normalnych rodzin",
             "wzrostu gospodarczego", "wskaźników ekonomicznych", "konstytucji", "prawa", "ładu publicznego",
-            "TVP", "Telewizji Polskiej", "dobrych ludzi", "normalnych ludzi", "tysięcy Polaków", "milionów Polaków"
+            "TVP", "Telewizji Polskiej", "dobrych ludzi", "normalnych ludzi", "tysięcy Polaków", "milionów Polaków",
+            "500+", "młodych patriotów", "wraku tupolewa",
         ]
     };
 
     ZLE_DOPELNIENIE = {
         biernik: ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-            "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei", "aferzystów",
+            "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwo", "złodziei", "aferzystów",
             "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
-            "bezrobocie", "dług publiczny", "zadłużenie", "biedę",
+            "bezrobocie", "dług publiczny", "zadłużenie", "biedę", "korupcję", "kolesiostwo",
             "kolesiów", "byłych agentów", "cywilizację śmierci", "kraje zachodu", "zachodnią europę",
             "media polskojęzyczne", "czarny protest", "stalinowskich sędziów"
         ],
         dopelniacz: ["Unii", "Izraela", "zachodu", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
             "ateistów", "feministek", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistycznych złogów", "złodziejstwa", "złodziei", "aferzystów",
             "gwałcicieli", "Tuska", "ubecji", "ideologii gender",
-            "bezrobocia", "długu publicznego", "zadłużenia", "biedy",
+            "bezrobocia", "długu publicznego", "zadłużenia", "biedy", "korupcji", "kolesiostwa",
             "kolesiów", "byłych agentów", "cywilizacji śmierci", "krajów zachodu", "zachodniej europy",
             "mediów polskojęzycznych", "czarnego protestu", "stalinowskich sędziów"
         ]
@@ -820,7 +830,7 @@
             return zlyPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
         } else if (k < 0.2) {
             return zlyPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
-        } else if (k < 0.7) {
+        } else if (k < 0.5) {
             return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
         } else {
             return zlyPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
@@ -839,7 +849,7 @@
             return dobryPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
         } else if (k < 0.2) {
             return dobryPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
-        } else if (k < 0.7) {
+        } else if (k < 0.5) {
             return dobryPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
         } else {
             return dobryPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
