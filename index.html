@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Paskownik</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet">
 
@@ -81,11 +82,10 @@
         .wiadomosci #wLogo .dot {
             position: absolute;
             box-shadow: 2px 2px 2px black;
-            background: linear-gradient(150deg, rgba(189,240,242,1) 10%, rgba(255,255,255,1) 20%, rgba(163,224,250,1) 30%, rgba(53,95,130,1) 50%, rgba(0,0,0,1) 95%);
+            background: linear-gradient(150deg, rgba(189, 240, 242, 1) 10%, rgba(255, 255, 255, 1) 20%, rgba(163, 224, 250, 1) 30%, rgba(53, 95, 130, 1) 50%, rgba(0, 0, 0, 1) 95%);
             opacity: 1;
             filter: blur(0.5px);
         }
-
 
         .wiadomosci #wLogo #row1 .dot {
             top: 0;
@@ -200,7 +200,7 @@
         }
 
         .wiadomosci #hdLogo svg {
-            width:  100%;
+            width: 100%;
         }
 
         .wiadomosci #hdLogo .svgLetterWithFill {
@@ -209,12 +209,11 @@
             font-size: 0.6em;
         }
 
-        #urlContainer,#url {
+        #urlContainer, #url {
             cursor: pointer
         }
 
     </style>
-
 
 
 </head>
@@ -232,52 +231,58 @@
             <form id="settings" class="card">
                 <div class="card-block">
                     <div class="row">
-<!--
-                        <div class="col form-group" id="styleRadio">
-                            <label for="styleRadio">Styl</label>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="style form-check-input" type="radio" name="style" value="wiadomosci" id="styleWiadomosci"/>
-                                    Wiadomości
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="style form-check-input" type="radio" name="style" value="tvp24" id="styleTvp24"/>
-                                    TVP 24
-                                </label>
-                            </div>
-                        </div>
--->
+                        <!--
+                                                <div class="col form-group" id="styleRadio">
+                                                    <label for="styleRadio">Styl</label>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input class="style form-check-input" type="radio" name="style" value="wiadomosci" id="styleWiadomosci"/>
+                                                            Wiadomości
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input class="style form-check-input" type="radio" name="style" value="tvp24" id="styleTvp24"/>
+                                                            TVP 24
+                                                        </label>
+                                                    </div>
+                                                </div>
+                        -->
                         <div class="col form-group" id="backgroundRadio">
                             <label for="backgroundRadio">
                                 Twarz transformacji
-                                <button class="btn  btn-outline-secondary" id="randomBackground" style="margin-left: 10px; cursor: pointer">?</button>
+                                <button class="btn  btn-outline-secondary" id="randomBackground"
+                                        style="margin-left: 10px; cursor: pointer">?
+                                </button>
 
                             </label>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="krzysztof"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="krzysztof"/>
                                             Krzysztof
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="danuta"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="danuta"/>
                                             Danuta
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="michal"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="michal"/>
                                             Michał
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="damian"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="damian"/>
                                             Damian
                                         </label>
                                     </div>
@@ -286,25 +291,29 @@
                                 <div class="col">
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="mateusz"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="mateusz"/>
                                             Mateusz
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="marcin"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="marcin"/>
                                             Marcin
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="karol"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="karol"/>
                                             Karol
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="background form-check-input" type="radio" name="background" value="malgorzata"/>
+                                            <input class="background form-check-input" type="radio" name="background"
+                                                   value="malgorzata"/>
                                             Małgorzata
                                         </label>
                                     </div>
@@ -322,7 +331,9 @@
                         <div class="input-group">
                             <input class="form-control" id="textInput" type="text"/>
                             <div class="input-group-append">
-                              <button class="btn  btn-outline-secondary" id="randomText" type="button" style="cursor: pointer">?</button>
+                                <button class="btn  btn-outline-secondary" id="randomText" type="button"
+                                        style="cursor: pointer">?
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -332,7 +343,9 @@
                         <div class="input-group">
                             <input class="form-control" id="subTextInput" type="text"/>
                             <div class="input-group-append">
-                              <button class="btn  btn-outline-secondary" id="randomSubText" type="button" style="cursor: pointer">?</button>
+                                <button class="btn  btn-outline-secondary" id="randomSubText" type="button"
+                                        style="cursor: pointer">?
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -406,7 +419,9 @@
 
 </div>
 
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
 <script type="application/javascript">
 
 
@@ -426,7 +441,7 @@
     };
 
     function randomElem(list) {
-      return list[randomInt(list.length)]
+        return list[randomInt(list.length)]
     }
 
 
@@ -513,141 +528,284 @@
 
     BIERNIK = "biernik";
 
+    M = "m";
+    F = "f";
+
+    LP = "lp";
+    LM = "lm";
+
     ZLY_PODMIOT = {
-        lp: ["Donald Tusk", "Tusk", "Merkel", "Juncker", "Michnik", "Ubecja", "Opozycja", "Totalna opozycja", "Bruksela",
-            "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "Kasta sędziów", "Ideologia gender",
-            "Gazeta Wyborcza",
-        ],
-        lm: ["Sędziowie", "Esbecy", "Opozycjoniści",
-                "Środowiska LGBT", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Feministki", "Anarchiści",
-                "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści", "Polskojęzyczne media", 
-                "Platformersi", "Kodziarze", "UBywatele", "Totalni", 
-                "Uchodźcy", "Imigranci",
-        ]
+        lp: {
+            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ"],
+            f: ["Merkel", "ubecja", "opozycja", "totalna opozycja", "Bruksela",
+                "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "kasta sędziów", "ideologia gender", "Gazeta Wyborcza", "TVN"]
+        },
+        lm: {
+            m: [
+                "Sędziowie", "Esbecy", "Opozycjoniści", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Anarchiści",
+                "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści",
+                "Platformersi", "Kodziarze", "UBywatele", "Totalni", "Aferzyści",
+                "Uchodźcy", "Imigranci", "Niemcy", "Islamiści", "Wrogowie Polski", "Zboczeńcy",
+                "Prowokatorzy", "Postkomuniści", "Pogrobowcy komuny", "Byli agenci bezpieki",
+                "Degeneraci", 
+
+            ],
+            f: [
+                "Środowiska LGBT", "Feministki", "Polskojęzyczne media", "Zdradzieckie mordy", "Łże-elity",
+            ]
+        }
     };
 
     DOBRY_PODMIOT = {
-        lp: ["Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
-                "Państwo", "Naród", "Kościół", "Partia rządząca",
-                "Młodzież", "Społeczeństwo", "TVP", 
+        lp: {
+            // nijakie "Społeczeństwo" i "Państwo"
+            m: [
+                "Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Jaki", "Orbán",
+                "Naród", "Kościół",
             ],
-        lm: ["Rządzący", "Obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy"
+            f: [
+                "Partia rządząca", "Młodzież", "TVP",
+                "Komisja", "Speckomisja", "Komisja sejmowa", "KRRiT", "Rada Etyki Mediów"
             ]
+        },
+        lm: {
+            m: [
+                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS",
+            ],
+            f: [
+                "Rodziny Radia Maryja", "kluby Gazety Polskiej",
+            ]
+        }
     };
 
     ZLE_ORZECZENIE = {
         biernik: {
-            lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
-                "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "udaje",],
-            lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
-                "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "beszczeszczą", "blokują", "okłamują", "oszukują", "udają"]
+            wczoraj: {
+                lp: {
+                    m: ["niszczył", "zabijał", "oskarżał", "zwalczał", "hańbił", "szargał", "gwałcił", "atakował", "donosił na",
+                        "obrażał", "okradał", "bezcześcił", "blokował", "okłamywał", "oszukiwał", "straszył",
+                        "oczerniał", "karcił", "krzyczał na", "ciemiężył",
+                        "zniszczył", "zabił", "zhańbił", "zgwałcił", "zaatakował", "doniósł na",
+                        "obraził", "okradł", "zbezcześcił", "zablokował", "okłamał", "oszukał",
+                        "oczernił", "skarcił",
+                    ],
+                    f: ["niszczyła", "zabijała", "oskarżała", "zwalczała", "hańbiła", "szargała", "gwałciła", "atakowała", "donosiła na",
+                        "obrażała", "okradała", "bezcześciła", "blokowała", "okłamywała", "oszukiwała", "straszyła",
+                        "oczerniała", "karciła", "krzyczała na", "ciemiężyła",
+                        "zniszczyła", "zabiła", "zhańbiła", "zgwałciła", "zaatakowała", "doniosła na",
+                        "obraziła", "okradła", "zbezcześciła", "zablokowała", "okłamała", "oszukała",
+                        "oczerniła", "skarciła",
+                    ]
+                },
+                lm: {
+                    m: ["niszczyli", "zabijali", "oskarżali", "zwalczali", "hańbili", "szargali", "gwałcili", "atakowali", "donosili na",
+                        "obrażali", "okradali", "bezcześcili", "blokowali", "okłamywali", "oszukiwali", "straszyli",
+                        "oczerniali", "karcili", "krzyczeli na", "ciemiężyli",
+                        "zniszczyli", "zabili", "zhańbili", "zgwałcili", "zaatakowali", "donieśli na",
+                        "obrazili", "okradli", "zbezcześcili", "zablokowali", "okłamali", "oszukali",
+                        "oczernili", "skarcili",
+
+                    ],
+                    f: ["niszczyły", "zabijały", "oskarżały", "zwalczały", "hańbiły", "szargały", "gwałciły", "atakowały", "donosiły na",
+                        "obrażały", "okradały", "bezcześciły", "blokowały", "okłamywały", "oszukiwały", "straszyły",
+                        "oczerniały", "karciły", "krzyczały na", "ciemiężyły",
+                        "zniszczyły", "zabiły", "zhańbiły", "zgwałciły", "zaatakowały", "doniosły na",
+                        "obraziły", "okradły", "zbezcześciły", "zablokowały", "okłamały", "oszukały",
+                        "oczerniły", "skarciły",
+                    ],
+                }
+
+            },
+
+            dzis: {
+                lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
+                    "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "udaje", "ostrzega", "straszy",
+                    "godzi w", "prowokuje", "oczernia", "karci", "krzyczy na", "ciemięży",
+
+                ],
+                lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
+                    "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "bezczeszczą", "blokują", "okłamują", "oszukują",
+                    "udają", "ostrzegają", "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą",
+                ]
+            }
         }
     };
 
     DOBRE_ORZECZENIE = {
         biernik: {
             lp: ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje", "poleca", "wspomaga", "wzmacnia",
-                "pokrzepia", "zachęca", "sponsoruje", "finansuje", "subsydiuje", "zasila"
+                "zachęca", "sponsoruje", "finansuje", "subsydiuje", "zasila"
             ],
             lm: ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują", "polecają", "wspomagają",
-                "wzmacniają", "pokrzepiają", "zachęcają", "sponsorują", "finansują", "subsydiują", "zasilają"
+                "wzmacniają", "zachęcają", "sponsorują", "finansują", "subsydiują", "zasilają"
             ]
         }
     };
 
     DOBRE_DOPELNIENIE = {
         biernik: ["Polskę", "Ojczyznę", "godło",
-                "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
-                "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
-                "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny",
-                "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "prawo", "ład publiczny",
-                "TVP", "Telewizję Polską",
+            "społeczeństwo", "obywateli", "Polaków", "polskie kobiety",
+            "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
+            "najuboższych", "emerytów", "rencistów", "wielodzietne rodziny", "katolickie rodziny", "normalne rodziny",
+            "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "prawo", "ład publiczny",
+            "TVP", "Telewizję Polską", "dobrych ludzi", "normalnych ludzi", "tysiące Polaków", "miliony Polaków"
         ]
     };
 
     ZLE_DOPELNIENIE = {
         biernik: ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-                "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei", "aferzystów",
-                "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
-                "bezrobocie", "dług publiczny", "zadłużenie", "biedę",
+            "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwa", "złodziei", "aferzystów",
+            "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
+            "bezrobocie", "dług publiczny", "zadłużenie", "biedę",
+            "kolesiów", "byłych agentów", "cywilizację śmierci", "kraje zachodu", "zachodnią europę",
+            "media polskojęzyczne",
         ]
     };
 
 
+    deduplicateQueue = []; // queue with last random words so we don't generate duplicates
+    deduplicateQueueMaxSize = 15;
+
     function random(words) {
-      return randomElem(words) + " "
+        let word = randomElem(words);
+        while (deduplicateQueue.includes(word)) {
+            word = randomElem(words)
+        }
+
+        deduplicateQueue.push(word);
+        if (deduplicateQueue.length > deduplicateQueueMaxSize) {
+            deduplicateQueue.shift()
+        }
+
+        return word + " "
     }
 
     function randomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max));
+        return Math.floor(Math.random() * Math.floor(max));
     }
 
-    function zlyPodmiot(liczba) {
-        return random(ZLY_PODMIOT[liczba])
-
+    function losowyRodzaj(podmioty) {
+        let mCount = podmioty.lp.m.length + podmioty.lm.m.length;
+        let fCount = podmioty.lp.f.length + podmioty.lm.f.length;
+        return randomInt(mCount + fCount) < mCount ? M : F;
     }
 
-    function dobryPodmiot(liczba) {
-        return random(DOBRY_PODMIOT[liczba])
+    function losowaLiczba(podmioty) {
+        let lpCount = podmioty.lp.m.length + podmioty.lp.f.length;
+        let lmCount = podmioty.lm.m.length + podmioty.lm.f.length;
+        return randomInt(lpCount + lmCount) < lpCount ? LP : LM;
     }
 
-    function zleOrzeczenie(liczba, przypadek) {
-        return random(ZLE_ORZECZENIE[przypadek][liczba])
+    function podmiot(podmioty, liczba, rodzaj) {
+        if (rodzaj) {
+            return random(podmioty[liczba][rodzaj])
+        } else {
+            return random(podmioty[liczba].m.concat(podmioty[liczba].f))
+        }
+    }
+
+    function zlyPodmiot(liczba, rodzaj) {
+        return podmiot(ZLY_PODMIOT, liczba, rodzaj);
+    }
+
+    function dobryPodmiot(liczba, rodzaj) {
+        return podmiot(DOBRY_PODMIOT, liczba, rodzaj);
+    }
+
+    function zleOrzeczenie(liczba, przypadek, czas, rodzaj) {
+        if (czas === WCZORAJ) {
+            return random(ZLE_ORZECZENIE[przypadek].wczoraj[liczba][rodzaj])
+        } else {
+            return random(ZLE_ORZECZENIE[przypadek].dzis[liczba])
+        }
     }
 
     function dobreOrzeczenie(liczba, przypadek) {
-            return random(DOBRE_ORZECZENIE[przypadek][liczba])
-        }
+        return random(DOBRE_ORZECZENIE[przypadek][liczba])
+    }
 
     function dobreDopelnienie(przypadek) {
         return random(DOBRE_DOPELNIENIE[przypadek])
     }
-    
+
     function zleDopelnienie(przypadek) {
         return random(ZLE_DOPELNIENIE[przypadek])
     }
 
+    function capitalizeFirstLetter(s) {
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
+
     function randomText() {
-        return randomTextWithSpaces().trim()
+        return capitalizeFirstLetter(randomTextWithSpaces().trim())
+    }
+
+    function randomTextZlyPodmiot() {
+        let rodzaj = losowyRodzaj(ZLY_PODMIOT);
+        let liczba = losowaLiczba(ZLY_PODMIOT);
+        let przypadek = "biernik";
+        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS]);
+
+        if (Math.random() < 0.3) {
+            return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
+        } else {
+            return zlyPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
+        }
+    }
+
+    function randomTextDobryPodmiot() {
+        let rodzaj = losowyRodzaj(DOBRY_PODMIOT);
+        let liczba = losowaLiczba(DOBRY_PODMIOT);
+        let przypadek = "biernik";
+        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS]);
+
+        if (Math.random() < 0.3) {
+            return dobryPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
+        } else {
+            return dobryPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
+        }
     }
 
     function randomTextWithSpaces() {
-        var liczba = randomElem(["lp", "lm"]);
-        var przypadek = "biernik";
-
-        switch(randomInt(6)) {
-            case 0:
-            case 1:
-                return zlyPodmiot(liczba) + zleOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
-            case 2:
-            case 3:
-                return zlyPodmiot(liczba) + dobreOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
-            case 4:
-                return dobryPodmiot(liczba) + dobreOrzeczenie(liczba, przypadek) + dobreDopelnienie(przypadek);
-            case 5:
-                return dobryPodmiot(liczba) + zleOrzeczenie(liczba, przypadek) + zleDopelnienie(przypadek);
+        if (Math.random() < 0.3) {
+            return randomTextDobryPodmiot();
+        } else {
+            return randomTextZlyPodmiot();
         }
-        return "";
     }
 
 
+    let style = getParam("style", "wiadomosci");
+    let background = getParam("background", "krzysztof");
+    let text = getParam("text", randomText());
+    let subText = getParam("subText", "Oglądaj na: wiadomosci.tvp.pl");
 
-
-    var style = getParam("style", "wiadomosci");
-    var background = getParam("background", "krzysztof");
-    var text = getParam("text", randomText());
-    var subText = getParam("subText", "Oglądaj na: wiadomosci.tvp.pl");
-
-    $("input.background").click(function(e) {setBackground($(e.target).attr("value"))});
-    $("input.style").click(function(e) {setStyle($(e.target).attr("value"))});
+    $("input.background").click(function (e) {
+        setBackground($(e.target).attr("value"))
+    });
+    $("input.style").click(function (e) {
+        setStyle($(e.target).attr("value"))
+    });
     $("#urlContainer").click(copyUrlToClipboard);
-    $("#textInput").keyup(function(e) {setText($(e.target).val())});
-    $("#subTextInput").keyup(function(e) {setSubText($(e.target).val())});
-    $("#randomText").click(function(e) {setText(randomText())});
-    $("#randomSubText").click(function(e) {setSubText(randomText())});
-    $("#randomBackground").click(function(e) {setRandomBackground()});
+    $("#textInput").keyup(function (e) {
+        setText($(e.target).val())
+    });
+    $("#subTextInput").keyup(function (e) {
+        setSubText($(e.target).val())
+    });
+    $("#randomText").click(function (e) {
+        setText(randomText())
+    });
+    $("#randomSubText").click(function (e) {
+        setSubText(randomText())
+    });
+    $("#randomBackground").click(function (e) {
+        setRandomBackground()
+    });
 
-    $(".randomizeOnClick").click(function(e) {randomize()});
+    $(".randomizeOnClick").click(function (e) {
+        randomize()
+    });
 
     setStyle(style);
     setBackground(background);
