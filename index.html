@@ -522,366 +522,874 @@
     // random text
     //////////////////////////////////////////
 
-    WCZORAJ = "wczoraj";
-    DZIS = "dzis";
-    JUTRO = "jutro";
+    const WCZORAJ = "wczoraj";
+    const DZIS = "dzis";
+    const JUTRO = "jutro";
 
-    BIERNIK = "biernik";
-    DOPELNIACZ = "dopelniacz";
+    const MIANOWNIK = "m";
+    const BIERNIK = "b";
+    const DOPELNIACZ = "d";
+    const BRAK = "brak";
 
-    M = "m";
-    F = "f";
+    const DOBRY = "dobre";
+    const ZLY = "zle";
 
-    LP = "lp";
-    LM = "lm";
+    const M = "m";
+    const F = "f";
 
-    ZLY_PODMIOT = {
-        lp: {
-            // nijakie "pokolenie róbta co chceta"
-            m: ["Donald Tusk", "Tusk", "Juncker", "Michnik", "układ", "czarny protest", "TW Bolek", "Owsiak"],
-            f: ["Merkel", "ubecja", "opozycja", "totalna opozycja", "Bruksela",
-                "Komisja Europejska", "Rada Europy", "Unia Europejska", "Unia", "kasta sędziów", "ideologia gender", "Gazeta Wyborcza", "TVN",
-                "kawiorowa lewica", "pogańska europa", "WOŚP"
+    const LP = "lp";
+    const LM = "lm";
+
+    RZECZOWNIKI = {
+        zle: {
+            aktywne: [
+                // nijakie "pokolenie róbta co chceta", 'homolewactwo', 'lewactwo'
+                {m: "Donald Tusk", d: "Donalda Tuska", b: "Donalda Tuska", rodzaj: M, liczba: LP},
+                {m: "Tusk", d: "Tuska", b: "Tuska", rodzaj: M, liczba: LP},
+                {m: "Juncker", d: "Junckera", b: "Junckera", rodzaj: M, liczba: LP},
+                {m: "Michnik", d: "Michnika", b: "Michnika", rodzaj: M, liczba: LP},
+                {m: "Adam Michnik", d: "Adama Michnika", b: "Adama Michnika", rodzaj: M, liczba: LP},
+                {m: "układ", d: "układu", b: "układ", rodzaj: M, liczba: LP},
+                {m: "czarny protest", d: "czarnego protestu", b: "czarny protest", rodzaj: M, liczba: LP},
+                {m: "TW Bolek", d: "TW Bolka", b: "TW Bolka", rodzaj: M, liczba: LP},
+                {m: "Owsiak", d: "Owsiaka", b: "Owsiaka", rodzaj: M, liczba: LP},
+                {m: "Merkel", d: "Merkel", b: "Merkel", rodzaj: F, liczba: LP},
+                {m: "ubecja", d: "ubecji", b: "ubecję", rodzaj: F, liczba: LP},
+                {m: "opozycja", d: "opozycji", b: "opozycję", rodzaj: F, liczba: LP},
+                {m: "totalna opozycja", d: "totalnej opozycji", b: "totalną opozycję", rodzaj: F, liczba: LP},
+                {m: "Bruksela", d: "Brukseli", b: "Brukselę", rodzaj: F, liczba: LP},
+                {m: "Komisja europejska", d: "Komisji europejskiej", b: "Komisję europejską", rodzaj: F, liczba: LP},
+                {m: "unia europejska", d: "unii europejskiej", b: "unię europejską", rodzaj: F, liczba: LP},
+                {m: "unia", d: "unii", b: "unię", rodzaj: F, liczba: LP},
+                {m: "Rada Europy", d: "Rady Europy", b: "Radę Europy", rodzaj: F, liczba: LP},
+                {m: "kasta sędziów", d: "kasty sędziów", b: "kastę sędziów", rodzaj: F, liczba: LP},
+                {m: "ideologia gender", d: "ideologii gender", b: "ideologię gender", rodzaj: F, liczba: LP},
+                {m: "Gazeta Wyborcza", d: "Gazety Wyborczej", b: "Gazetę Wyborczą", rodzaj: F, liczba: LP},
+                {m: "TVN", d: "TVN", b: "TVN", rodzaj: F, liczba: LP},
+                {m: "kawiorowa lewica", d: "kawiorowej lewicy", b: "kawiorową lewicę", rodzaj: F, liczba: LP},
+                {m: "Europa", d: "Europy", b: "Europę", rodzaj: F, liczba: LP},
+                {m: "pogańska Europa", d: "pogańskiej Europy", b: "pogańską Europę", rodzaj: F, liczba: LP},
+                {m: "zachodnia Europa", d: "zachodniej Europy", b: "zachodnią Europę", rodzaj: F, liczba: LP},
+                {m: "WOŚP", d: "WOŚP", b: "WOŚP", rodzaj: F, liczba: LP},
+                {m: "sędziowie", d: "sędziów", b: "sędziów", rodzaj: M, liczba: LM},
+                {m: "komunistyczni sędziowie", d: "komunistycznych sędziów", b: "komunistycznych sędziów", rodzaj: M, liczba: LM},
+                {m: "stalinowscy sędziowie", d: "stalinowskich sędziów", b: "stalinowskich sędziów", rodzaj: M, liczba: LM},
+                {m: "esbecy", d: "esbeków", b: "esbeków", rodzaj: M, liczba: LM},
+                {m: "byli esbecy", d: "byłych esbeków", b: "byłych esbeków", rodzaj: M, liczba: LM},
+                {m: "opozycjoniści", d: "opozycjonistów", b: "opozycjonistów", rodzaj: M, liczba: LM},
+                {m: "geje", d: "gejów", b: "gejów", rodzaj: M, liczba: LM},
+                {m: "Żydzi", d: "Żydów", b: "Żydów", rodzaj: M, liczba: LM},
+                {m: "masoni", d: "masonów", b: "masonów", rodzaj: M, liczba: LM},
+                {m: "wegetarianie", d: "wegetarian", b: "wegetarian", rodzaj: M, liczba: LM},
+                {m: "anarchiści", d: "anarchistów", b: "anarchistów", rodzaj: M, liczba: LM},
+                {m: "wrogowie Polski", d: "wrogów Polski", b: "wrogów Polski", rodzaj: M, liczba: LM},
+                {m: "wrogowie ojczyzny", d: "wrogów ojczyzny", b: "wrogów ojczyzny", rodzaj: M, liczba: LM},
+                {m: "wrogowie zmian", d: "wrogów zmian", b: "wrogów zmian", rodzaj: M, liczba: LM},
+                {m: "wrogowie Kościoła", d: "wrogów Kościoła", b: "wrogów Kościoła", rodzaj: M, liczba: LM},
+                {m: "złodzieje", d: "złodziejów", b: "złodziejów", rodzaj: M, liczba: LM},
+                {m: "bandyci", d: "bandytów", b: "bandytów", rodzaj: M, liczba: LM},
+                {m: "komuniści", d: "komunistów", b: "komunistów", rodzaj: M, liczba: LM},
+                {m: "byli komuniści", d: "byłch komunistów", b: "byłych komunistów", rodzaj: M, liczba: LM},
+                {m: "euroentuzjaści", d: "euroentuzjastów", b: "euroentuzjastów", rodzaj: M, liczba: LM},
+                {m: "wyborcy PO", d: "wyborców PO", b: "wyborców PO", rodzaj: M, liczba: LM},
+                {m: "kodziarze", d: "kodziarzy", b: "kodziarzy", rodzaj: M, liczba: LM},
+                {m: "Totalni", d: "Totalnych", b: "Totalnych", rodzaj: M, liczba: LM},
+                {m: "aferzyści", d: "aferzystów", b: "aferzystów", rodzaj: M, liczba: LM},
+                {m: "uchodźcy", d: "uchodźców", b: "uchodźców", rodzaj: M, liczba: LM},
+                {m: "śniadzi uchodźcy", d: "śniadych uchodźców", b: "śniadych uchodźców", rodzaj: M, liczba: LM},
+                {m: "ciemnoskórzy uchodźcy", d: "ciemnoskórych uchodźców", b: "ciemnoskórych uchodźców", rodzaj: M, liczba: LM},
+                {m: "imigranci", d: "imigrantów", b: "imigrantó", rodzaj: M, liczba: LM},
+                {m: "Niemcy", d: "Niemców", b: "Niemców", rodzaj: M, liczba: LM},
+                {m: "Francuzi", d: "Francuzów", b: "Francuzów", rodzaj: M, liczba: LM},
+                {m: "islamiści", d: "islamistów", b: "islamistów", rodzaj: M, liczba: LM},
+                {m: "wrogowie Polski", d: "wrogów Polski", b: "wrogów Polski", rodzaj: M, liczba: LM},
+                {m: "wrogowie zmian", d: "wrogów zmian", b: "wrogów zmian", rodzaj: M, liczba: LM},
+                {m: "zboczeńcy", d: "zboczeńców", b: "zboczeńców", rodzaj: M, liczba: LM},
+                {m: "prowokatorzy", d: "prowokatorów", b: "prowokatorów", rodzaj: M, liczba: LM},
+                {m: "postkomuniści", d: "postkomunistów", b: "postkomunistów", rodzaj: M, liczba: LM},
+                {m: "pogrobowcy komuny", d: "pogrobowców komuny", b: "pogrobowców komuny", rodzaj: M, liczba: LM},
+                {m: "byli agenci bezpieki", d: "byłych agentów bezpieki", b: "byłych agentów bezpieki", rodzaj: M, liczba: LM},
+                {m: "byli agenci", d: "byłych agentów", b: "byłych agentów", rodzaj: M, liczba: LM},
+                {m: "degeneraci", d: "degeneratów", b: "degeneratów", rodzaj: M, liczba: LM},
+                {m: "chuligani", d: "chuliganów", b: "chuliganów", rodzaj: M, liczba: LM},
+                {m: "antypolscy dziennikarze", d: "antypolskich dziennikarzy", b: "antypolskich dziennikarzy", rodzaj: M, liczba: LM},
+                {m: "młodzi lekarze", d: "młodych lekarzy", b: "młodych lekarzy", rodzaj: M, liczba: LM},
+                {m: "rezydenci", d: "rezydentów", b: "rezydentów", rodzaj: M, liczba: LM},
+                {m: "'artyści'", d: "'artystów'", b: "'artystów'", rodzaj: M, liczba: LM},
+                {m: "narkomani", d: "narkomanów", b: "narkomanów", rodzaj: M, liczba: LM},
+                {m: "środowiska LGBT", d: "środowisk LGBT", b: "środowiska LGBT", rodzaj: F, liczba: LM},
+                {m: "feministki", d: "feministek", b: "feministki", rodzaj: F, liczba: LM},
+                {m: "media polskojęzyczne", d: "mediów polskojęzycznych", b: "media polskojęzyczne", rodzaj: F, liczba: LM},
+                {m: "antypolskie media", d: "antypolskich mediów", b: "antypolskie media", rodzaj: F, liczba: LM},
+                {m: "zdradzieckie mordy", d: "zdradzieckich mord", b: "zdradzieckie mordy", rodzaj: F, liczba: LM},
+                {m: "łże-elity", d: "łże-elit", b: "łże-elity", rodzaj: F, liczba: LM},
+                {m: "bezdzietne kobiety", d: "bezdzietnych kobiet", b: "bezdzietne kobiety", rodzaj: F, liczba: LM},
+                {m: "liberalne elity", d: "liberalnych elity", b: "liberalne elity", rodzaj: F, liczba: LM},
+                {m: "liberałowie", d: "liberałów", b: "liberałów", rodzaj: M, liczba: LM},
+                {m: "Izrael", d: "Izraela", b: "Izrael", rodzaj: M, liczba: LP},
+                {m: "zachód", d: "zachodu", b: "zachód", rodzaj: M, liczba: LP},
+                {m: "ateiści", d: "ateistów", b: "ateistów", rodzaj: M, liczba: LM},
+                {m: "Soros", d: "Sorosa", b: "Sorosa", rodzaj: M, liczba: LP},
+                {m: "komunistyczne złogi", d: "komunistycznych złogów", b: "komunistyczne złogi", rodzaj: F, liczba: LM},
+                {m: "gwałciciele", d: "gwałcicieli", b: "gwałcicieli", rodzaj: M, liczba: LM},
+                {m: "ideologia gender", d: "ideologii gender", b: "ideologię gender", rodzaj: F, liczba: LP},
+                {m: "kolesie", d: "kolesiów", b: "kolesiów", rodzaj: M, liczba: LM},
+                {m: "cywilizacja śmierci", d: "cywilizacji śmierci", b: "cywilizację śmierci", rodzaj: F, liczba: LP},
+                {m: "kraje zachodu", d: "krajów zachodu", b: "kraje zachodu", rodzaj: F, liczba: LM},
+                {m: "beneficjenci transformacji", d: "beneficjentów transformacji", b: "beneficjentów transformacji", rodzaj: M, liczba: LM},
+
+                ],
+            pasywne: [
+                {m: "upadek moralności", d: "upadku moralności", b: "upadek moralności", rodzaj: M, liczba: LP},
+                {m: "złodziejstwo", d: "złodziejstwa", b: "złodziejstwo", rodzaj: M, liczba: LP},
+                {m: "bezrobocie", d: "bezrobocia", b: "bezrobocie", rodzaj: M, liczba: LP},
+                {m: "dług publiczny", d: "długu publicznego", b: "dług publiczny", rodzaj: M, liczba: LP},
+                {m: "zadłużenie", d: "zadłużenia", b: "zadłużenie", rodzaj: M, liczba: LP},
+                {m: "bieda", d: "biedy", b: "biedę", rodzaj: F, liczba: LP},
+                {m: "korupcja", d: "korupcji", b: "korupcję", rodzaj: F, liczba: LP},
+                {m: "kolesiostwo", d: "kolesiostwa", b: "kolesiostwo", rodzaj: M, liczba: LP},
+                {m: "afera podsłuchowa", d: "afery podsłuchowej", b: "aferę podsłuchową", rodzaj: F, liczba: LP},
+                {m: "afera hazardowa", d: "afery hazardowej", b: "aferę hazardową", rodzaj: F, liczba: LP},
+                {m: "afera Amber Gold", d: "afery Amber Gold", b: "aferę Amber Gold", rodzaj: F, liczba: LP},
+                {m: "afera melioracyjna", d: "afery melioracyjnej", b: "aferę melioracyjną", rodzaj: F, liczba: LP},
             ]
         },
-        lm: {
-            m: [
-                "Sędziowie", "Esbecy", "Opozycjoniści", "Geje", "Sędziowie", "Żydzi", "Masoni", "Wegetarianie", "Anarchiści",
-                "Wrogowie Polski", "Złodzieje", "Bandyci", "Komuniści", "Euroentuzjaści",
-                "Platformersi", "Kodziarze", "UBywatele", "Totalni", "Aferzyści",
-                "Uchodźcy", "Imigranci", "Niemcy", "Islamiści", "Wrogowie Polski", "Zboczeńcy",
-                "prowokatorzy", "postkomuniści", "pogrobowcy komuny", "byli agenci bezpieki",
-                "degeneraci", "chuligani", "antypolscy dziennikarze", "młodzi lekarze", "'artyści'",
-                "narkomani",
 
-
+        dobre: {
+            aktywne: [
+                {m: "Prezydent", d: "Prezydenta", b: "Prezydenta", rodzaj: M, liczba: LP},
+                {m: "Prezydent Duda", d: "Prezydenta Dudy", b: "Prezydenta Dudę", rodzaj: M, liczba: LP},
+                {m: "Andrzej Duda", d: "Andrzeja Dudy", b: "Andrzeja Dudę", rodzaj: M, liczba: LP},
+                {m: "Premier", d: "Premier", b: "Premier", rodzaj: M, liczba: LP},
+                {m: "Premier Morawiecki", d: "Premiera Morawieckiego", b: "Premiera Morawieckiego", rodzaj: M, liczba: LP},
+                {m: "Mateusz Morawiecki", d: "Mateusza Morawieckiego", b: "Mateusza Morawieckiego", rodzaj: M, liczba: LP},
+                {m: "Morawiecki", d: "Morawieckiego", b: "Morawieckiego", rodzaj: M, liczba: LP},
+                {m: "Kaczyński", d: "Kaczyńskiego", b: "Kaczyńskiego", rodzaj: M, liczba: LP},
+                {m: "Jarosław Kaczyński", d: "Jarosława Kaczyńskego", b: "Jarosława Kaczyńskego", rodzaj: M, liczba: LP},
+                {m: "rząd", d: "rządu", b: "rząd", rodzaj: M, liczba: LP},
+                {m: "sejm", d: "sejmu", b: "sejm", rodzaj: M, liczba: LP},
+                {m: "parlament", d: "parlamentu", b: "parlament", rodzaj: M, liczba: LP},
+                {m: "Ziobro", d: "Ziobry", b: "Ziobrę", rodzaj: M, liczba: LP},
+                {m: "Zbigniew Ziobro", d: "Zbigniewa Ziobry", b: "Zbigniewa Ziobrę", rodzaj: M, liczba: LP},
+                {m: "Orbán", d: "Orbána", b: "Orbána", rodzaj: M, liczba: LP},
+                {m: "Pan Kurski", d: "Pana Kurskiego", b: "Pana Kurskiego", rodzaj: M, liczba: LP},
+                {m: "Naród", d: "Narodu", b: "Naród", rodzaj: M, liczba: LP},
+                {m: "Kościół", d: "Kościoła", b: "Kościół", rodzaj: M, liczba: LP},
+                {m: "minister", d: "ministra", b: "ministra", rodzaj: M, liczba: LP},
+                {m: "poseł", d: "posła", b: "posła", rodzaj: M, liczba: LP},
+                {m: "partia rządząca", d: "partii rządzącej", b: "partię rządzącą", rodzaj: F, liczba: LP},
+                {m: "młodzież", d: "młodzieży", b: "młodzież", rodzaj: F, liczba: LP},
+                {m: "TVP", d: "TVP", b: "TVP", rodzaj: F, liczba: LP},
+                {m: "Telewizja Polska", d: "Telewizji Polskiej", b: "Telewizję Polską", rodzaj: F, liczba: LP},
+                {m: "posłanka", d: "posłanki", b: "posłankę", rodzaj: F, liczba: LP},
+                {m: "komisja", d: "komisji", b: "komisję", rodzaj: F, liczba: LP},
+                {m: "speckomisja", d: "speckomisji", b: "speckomisję", rodzaj: F, liczba: LP},
+                {m: "Komisja sejmowa", d: "Komisji sejmowej", b: "Komisję sejmową", rodzaj: F, liczba: LP},
+                {m: "KRRiT", d: "KRRiT", b: "KRRiT", rodzaj: F, liczba: LP},
+                {m: "Rada Etyki Mediów", d: "Rady Etyki Mediów", b: "Radę Etyki Mediów", rodzaj: F, liczba: LP},
+                {m: "polonia z Chicago", d: "polonii z Chicago", b: "polonię z Chicago", rodzaj: F, liczba: LP},
+                {m: "rada ministrów", d: "rady ministrów", b: "radę ministrów", rodzaj: F, liczba: LP},
+                {m: "kancelaria prezydenta", d: "kancelarii prezydenta", b: "kancelarię prezydenta", rodzaj: F, liczba: LP},
+                {m: "Dobra Zmiana", d: "Dobrej Zmiany", b: "Dobrą Zmianę", rodzaj: F, liczba: LP},
+                {m: "rządzący", d: "rządzących", b: "rządzących", rodzaj: M, liczba: LM},
+                {m: "obywatele", d: "obywateli", b: "obywateli", rodzaj: M, liczba: LM},
+                {m: "obrońcy krzyża", d: "obrońców krzyża", b: "obrońców krzyża", rodzaj: M, liczba: LM},
+                {m: "obrońcy nienarodzonych", d: "obrońców nienarodzonych", b: "obrońców nienarodzonych", rodzaj: M, liczba: LM},
+                {m: "Polacy", d: "Polaków", b: "Polaków", rodzaj: M, liczba: LM},
+                {m: "rodacy", d: "rodaków", b: "rodaków", rodzaj: M, liczba: LM},
+                {m: "posłowie PiS", d: "posłów PiS", b: "posłów PiS", rodzaj: M, liczba: LM},
+                {m: "członkowie PiS", d: "członków PiS", b: "członków PiS", rodzaj: M, liczba: LM},
+                {m: "patrioci", d: "patriotów", b: "patriotów", rodzaj: M, liczba: LM},
+                {m: "młodzi patrioci", d: "młodych patriotów", b: "młodych patriotów", rodzaj: M, liczba: LM},
+                {m: "przyjaciele Polski", d: "przyjaciół Polski", b: "przyjaciół Polski", rodzaj: M, liczba: LM},
+                {m: "myśliwi", d: "myśliwych", b: "myśliwych", rodzaj: M, liczba: LM},
+                {m: "rolnicy", d: "rolników", b: "rolników", rodzaj: M, liczba: LM},
+                {m: "górnicy", d: "górników", b: "górników", rodzaj: M, liczba: LM},
+                {m: "robotnicy", d: "robotników", b: "robotników", rodzaj: M, liczba: LM},
+                {m: "prawdziwi artyści", d: "prawdziwych artystów", b: "prawdziwych artystów", rodzaj: M, liczba: LM},
+                {m: "Rodziny Radia Maryja", d: "Rodzin Radia Maryja", b: "Rodziny Radia Maryja", rodzaj: F, liczba: LM},
+                {m: "kluby Gazety Polskiej", d: "klubów Gazety Polskiej", b: "kluby Gazety Polskiej", rodzaj: F, liczba: LM},
+                {m: "matki Polki", d: "matek Polek", b: "matki Polki", rodzaj: F, liczba: LM},
+                {m: "siły Dobrej Zmiany", d: "sił Dobrej Zmiany", b: "siły Dobrej Zmiany", rodzaj: F, liczba: LM},
+                {m: "Polska", d: "Polski", b: "Polskę", rodzaj: F, liczba: LP},
+                {m: "Ojczyzna", d: "Ojczyzny", b: "Ojczyznę", rodzaj: F, liczba: LP},
+                {m: "dobrzy ludzie", d: "dobrych ludzi", b: "dobrych ludzi", rodzaj: M, liczba: LM},
+                {m: "normalni ludzie", d: "normalnych ludzi", b: "normalnych ludzi", rodzaj: M, liczba: LM},
+                {m: "polskie kobiety", d: "polskich kobiet", b: "polskie kobiety", rodzaj: F, liczba: LM},
+                {m: "Papież", d: "Papieża", b: "Papieża", rodzaj: M, liczba: LP},
+                {m: "tysiące Polaków", d: "tysięcy Polaków", b: "tysiące Polaków", rodzaj: F, liczba: LM},
+                {m: "miliony Polaków", d: "milionów Polaków", b: "miliony Polaków", rodzaj: F, liczba: LM},
+                {m: "Patryk Jaki", d: "Patryka Jakiego", b: "Patryka Jakiego", rodzaj: M, liczba: LP},
             ],
-            f: [
-                "środowiska LGBT", "feministki", "polskojęzyczne media", "zdradzieckie mordy", "łże-elity",
-                "bezdzietne kobiety", "liberalne elity",
+            pasywne: [
+                {m: "godło", d: "godła", b: "godło", rodzaj: M, liczba: LP},
+                {m: "społeczeństwo", d: "społeczeństwa", b: "społeczeństwo", rodzaj: M, liczba: LP},
+                {m: "nasze dzieci", d: "naszych dzieci", b: "nasze dzieci", rodzaj: F, liczba: LM},
+                {m: "nienarodzone dzieci", d: "nienarodzonych dzieci", b: "nienarodzone dzieci", rodzaj: F, liczba: LM},
+                {m: "gospodarka", d: "gospodarki", b: "gospodarkę", rodzaj: F, liczba: LP},
+                {m: "reformy", d: "reform", b: "reformy", rodzaj: F, liczba: LM},
+                {m: "Krzyż", d: "Krzyża", b: "Krzyż", rodzaj: M, liczba: LP},
+                {m: "Matka Boska", d: "Matki Boskiej", b: "Matkę Boską", rodzaj: F, liczba: LP},
+                {m: "najubożsi", d: "najuboższych", b: "najuboższych", rodzaj: M, liczba: LM},
+                {m: "emeryci", d: "emerytów", b: "emerytów", rodzaj: M, liczba: LM},
+                {m: "renciści", d: "rencistów", b: "rencistów", rodzaj: M, liczba: LM},
+                {m: "rodziny wielodzietne", d: "rodzin wielodzietnych", b: "rodziny wielodzietne", rodzaj: F, liczba: LM},
+                {m: "katolickie rodziny", d: "katolickich rodzin", b: "katolickie rodziny", rodzaj: F, liczba: LM},
+                {m: "normalne rodziny", d: "normalnych rodzin", b: "normalne rodziny", rodzaj: F, liczba: LM},
+                {m: "wzrost gospodarczy", d: "wzrostu gospodarczego", b: "wzrost gospodarczy", rodzaj: M, liczba: LP},
+                {m: "wskaźniki ekonomiczne", d: "wskaźników ekonomicznych", b: "wskaźniki ekonomiczne", rodzaj: F, liczba: LM},
+                {m: "konstytucja", d: "konstytucji", b: "konstytucję", rodzaj: F, liczba: LP},
+                {m: "ład publiczny", d: "ładu publicznego", b: "ład publiczny", rodzaj: M, liczba: LP},
+                {m: "wrak tupolewa", d: "wraku tupolewa", b: "wrak tupolewa", rodzaj: M, liczba: LP},
+                {m: "zmiany", d: "zmian", b: "zmiany", rodzaj: F, liczba: LM},
+                {m: "500+", d: "500+", b: "500+", rodzaj: M, liczba: LP},
+                {m: "weterani", d: "weteranów", b: "weteranów", rodzaj: M, liczba: LM},
+                {m: "ofiary reprywatyzacji", d: "ofiar reprywatyzacji", b: "ofiary reprywatyzacji", rodzaj: F, liczba: LM},
+                {m: "pomnik smoleński", d: "pomnika smoleńskiego", b: "pomnik smoleński", rodzaj: M, liczba: LP},
+                {m: "gospodarka węglowa", d: "gospodarki węglowej", b: "gospodarkę węglową", rodzaj: F, liczba: LP},
+                {m: "elektromobilność", d: "elektromobilności", b: "elektromobilność", rodzaj: F, liczba: LP},
+                {m: "sukcesy Polski", d: "sukcesów Polski", b: "sukcesy Polski", rodzaj: F, liczba: LM},
+                {m: "przyszłość Polski", d: "przyszłości Polski", b: "przyszłość Polski", rodzaj: F, liczba: LP},
+                {m: "interesy Polski", d: "interesów Polski", b: "interesy Polski", rodzaj: F, liczba: LM},
             ]
-        }
-    };
-
-    DOBRY_PODMIOT = {
-        lp: {
-            // nijakie "Społeczeństwo" i "Państwo"
-            m: [
-                "Prezydent", "Premier", "Rząd", "Morawiecki", "Kaczyński", "Ziobro", "Orbán", "Pan Kurski",
-                "Naród", "Kościół", "minister", "poseł"
-            ],
-            f: [
-                "Partia rządząca", "Młodzież", "TVP", "posłanka",
-                "Komisja", "Speckomisja", "Komisja sejmowa", "KRRiT", "Rada Etyki Mediów",
-                "polonia z Chicago", "rada ministrów", "kancelaria prezydenta", "Dobra Zmiana",
-                 
-            ]
-        },
-        lm: {
-            m: [
-                "rządzący", "obywatele", "Obrońcy krzyża", "Obrońcy nienarodzonych", "Polacy", "Rodacy", "Posłowie PiS",
-                "patrioci", "przyjaciele Polski", "myśliwi", "hodowcy", "rolnicy", "górnicy", "robotnicy", "prawdziwi artyści",
-            ],
-            f: [
-                "Rodziny Radia Maryja", "kluby Gazety Polskiej", "matki", "matki Polki", "siły Dobrej Zmiany"
-            ]
-        }
-    };
-
-    ZLE_ORZECZENIE = {
-        // celownik: dać odpór
-        biernik: {
-            wczoraj: {
-                lp: {
-                    m: ["niszczył", "zabijał", "oskarżał", "zwalczał", "hańbił", "szargał", "gwałcił", "atakował", "donosił na",
-                        "obrażał", "okradał", "bezcześcił", "blokował", "okłamywał", "oszukiwał", "straszył",
-                        "oczerniał", "karcił", "krzyczał na", "ciemiężył",
-                        "zniszczył", "zabił", "zhańbił", "zgwałcił", "zaatakował", "doniósł na",
-                        "obraził", "okradł", "zbezcześcił", "zablokował", "okłamał", "oszukał",
-                        "oczernił", "skarcił", "osądził",
-                    ],
-                    f: ["niszczyła", "zabijała", "oskarżała", "zwalczała", "hańbiła", "szargała", "gwałciła", "atakowała", "donosiła na",
-                        "obrażała", "okradała", "bezcześciła", "blokowała", "okłamywała", "oszukiwała", "straszyła",
-                        "oczerniała", "karciła", "krzyczała na", "ciemiężyła",
-                        "zniszczyła", "zabiła", "zhańbiła", "zgwałciła", "zaatakowała", "doniosła na",
-                        "obraziła", "okradła", "zbezcześciła", "zablokowała", "okłamała", "oszukała",
-                        "oczerniła", "skarciła", "osądziła",
-                    ]
-                },
-                lm: {
-                    m: ["niszczyli", "zabijali", "oskarżali", "zwalczali", "hańbili", "szargali", "gwałcili", "atakowali", "donosili na",
-                        "obrażali", "okradali", "bezcześcili", "blokowali", "okłamywali", "oszukiwali", "straszyli",
-                        "oczerniali", "karcili", "krzyczeli na", "ciemiężyli",
-                        "zniszczyli", "zabili", "zhańbili", "zgwałcili", "zaatakowali", "donieśli na",
-                        "obrazili", "okradli", "zbezcześcili", "zablokowali", "okłamali", "oszukali",
-                        "oczernili", "skarcili", "osądzili",
-
-                    ],
-                    f: ["niszczyły", "zabijały", "oskarżały", "zwalczały", "hańbiły", "szargały", "gwałciły", "atakowały", "donosiły na",
-                        "obrażały", "okradały", "bezcześciły", "blokowały", "okłamywały", "oszukiwały", "straszyły",
-                        "oczerniały", "karciły", "krzyczały na", "ciemiężyły",
-                        "zniszczyły", "zabiły", "zhańbiły", "zgwałciły", "zaatakowały", "doniosły na",
-                        "obraziły", "okradły", "zbezcześciły", "zablokowały", "okłamały", "oszukały",
-                        "oczerniły", "skarciły", "osądziły",
-                    ],
-                }
-
-            },
-
-            dzis: {
-                lp: ["niszczy", "zabija", "oskarża", "zwalcza", "hańbi", "szarga", "gwałci", "atakuje", "donosi na",
-                    "idzie po", "obraża", "okrada", "bezcześci", "blokuje", "okłamuje", "oszukuje", "straszy",
-                    "godzi w", "prowokuje", "oczernia", "karci", "krzyczy na", "ciemięży", "gani", "sądzi",
-
-                ],
-                lm: ["niszczą", "zabijają", "oskarżają", "zwalczają", "hańbią", "szargają", "gwałcą", "atakują",
-                    "donoszą na", "idą po", "obrażają", "kradną", "okradają", "kalają", "bezczeszczą", "blokują", "okłamują", "oszukują",
-                    "straszą", "godzą w", "prowokują", "oczerniają", "karcą", "krzyczą na", "ciemiężą", "ganią", "sądzą",
-                ]
-            },
-
-            jutro: {
-                lp: ["zniszczy", "zabije", "oskarży", "zhańbi", "zszarga", "zgwałci", "zaatakuje", "doniesie na",
-                    "pójdzie po", "obrazi", "okradnie", "zbezcześci", "zablokuje", "okłamie", "oszuka", "nastraszy",
-                    "sprowokuje", "oczerni", "skarci", "będzie cięmiężyć", "osądzi",
-
-                ],
-                lm: ["zniszczą", "zabiją", "oskarżą", "zwalczą", "zhańbią", "zszargają", "zgwałcą", "zaatakują",
-                    "doniosą na", "pójdą po", "obrażą", "ukradną", "okradną", "skalają", "zbezczeszczą", "zablokują", "okłamią", "oszukają",
-                    "nastraszą", "ugodzą w", "sprowokują", "oczernią", "skarcą", "będą ciemiężyć", "osądzą",
-                ]
-            }
 
         }
     };
 
-    DOBRE_ORZECZENIE = {
-        biernik: {
-            wczoraj: {
-                lp: {
-                    m: ["poparł", "wsparł", "opłacał", "opłacił", "chwalił", "pochwalił", "nagradzał", "nagrodził",
-                        "uratował", "polecał", "wspomógł", "wzmocnił",
-                        "sponsorował", "finansował", "subsydiował", "zasilał",
-                        "wysławiał", "wielbił", "przyniósł",
-                    ],
-                    f: ["poparła", "wsparła", "opłacała", "opłaciła", "chwaliła", "pochwaliła", "nagradzała", "nagrodziła",
-                        "uratowała", "polecała", "wspomogła", "wzmocniła",
-                        "sponsorowała", "finansowała", "subsydiowała", "zasilała",
-                        "wysławiała", "wielbiła", "przyniosła",
-                    ],
-                },
-                lm: {
-                    m: ["poparli", "wsparli", "opłacali", "opłacili", "chwalili", "pochwalili", "nagradzali", "nagrodzili",
-                        "uratowali", "polecali", "wspomogli", "wzmocnili",
-                        "sponsorowali", "finansowali", "subsydiowali", "zasilali",
-                        "wysławiali", "wielbili", "przynieśli",
-                    ],
-                    f: ["poparły", "wsparły", "opłacały", "opłaciły", "chwaliły", "pochwaliły", "nagradzały", "nagrodziły",
-                        "uratowały", "polecały", "wspomogły", "wzmocniły",
-                        "sponsorowały", "finansowały", "subsydiowały", "zasilały",
-                        "wysławiały", "wielbiły", "przyniosły",
-                    ],
-                }
+    RZECZOWNIKI.dobre.aktywne.concat(RZECZOWNIKI.dobre.pasywne).forEach(function(w) {
+        w.charakter = DOBRY;
+    });
+    RZECZOWNIKI.zle.aktywne.concat(RZECZOWNIKI.zle.pasywne).forEach(function(w) {
+        w.charakter = ZLY;
+    });
+
+    CZASOWNIKI = {
+        zle: [
+            {
+                wczoraj: {lp: {m: "niszczył", f: "niszczyła"}, lm: {m: "niszczyli", f: "niszczyły"}},
+                dzis: {lp: "niszczy", lm: "niszczą"},
+                jutro: {lp: "będzie niszczyć", lm: "będą niszczyć"},
+                dopelnienie: BIERNIK
             },
-            dzis: {
-                lp: ["popiera", "wspiera", "opłaca", "chwali", "nagradza", "ratuje", "poleca", "wspomaga", "wzmacnia",
-                    "sponsoruje", "finansuje", "subsydiuje", "zasila",
-                    "wysławia", "wielbi", "niesie",
-                ],
-                lm: ["popierają", "wspierają", "opłacają", "chwalą", "nagradzają", "ratują", "polecają", "wspomagają",
-                    "wzmacniają", "sponsorują", "finansują", "subsydiują", "zasilają",
-                    "wysławiają", "wielbią", "niosą"
-                ]
+            {
+                wczoraj: {lp: {m: "zabijał", f: "zabijała"}, lm: {m: "zabijali", f: "zabijały"}},
+                dzis: {lp: "zabija", lm: "zabijają"},
+                jutro: {lp: "zabije", lm: "zabiją"},
+                dopelnienie: BIERNIK
             },
-            jutro: {
-                lp: ["poprze", "wesprze", "opłaci", "pochwali", "nagrodzi", "uratuje", "poleci", "wspomoże", "wzmocni",
-                    "zasponsoruje", "sfinansuje", "zasubsydiuje", "zasili", "będzie wysławiać", "przyniesie",
-                ],
-                lm: ["poprą", "wesprą", "opłacą", "pochwalą", "nagrodzą", "uratują", "polecą", "wspomogą",
-                    "wzmocnią", "zasponsorują", "sfinansują", "zasubsydiują", "zasilą", "będą wysławiać",
-                    "przyniosą",
-                ]
-            }
-        }
-    };
+            {
+                wczoraj: {lp: {m: "oskarżał", f: "oskarżała"}, lm: {m: "oskarżali", f: "oskarżały"}},
+                dzis: {lp: "oskarża", lm: "oskarżają"},
+                jutro: {lp: "oskarży", lm: "oskarżą"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true,
+            },
+            {
+                wczoraj: {lp: {m: "zwalczał", f: "zwalczała"}, lm: {m: "zwalczali", f: "zwalczały"}},
+                dzis: {lp: "zwalcza", lm: "zwalczają"},
+                jutro: {lp: "będzie zwalczać", lm: "będą zwalczać"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "hańbił", f: "hańbiła"}, lm: {m: "hańbili", f: "hańbiły"}},
+                dzis: {lp: "hańbi", lm: "hańbią"},
+                jutro: {lp: "będzie hańbić", lm: "będą hańbić"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "szargał", f: "szargała"}, lm: {m: "szargali", f: "szargały"}},
+                dzis: {lp: "szarga", lm: "szargają"},
+                jutro: {lp: "będzie szargać", lm: "będą szargać"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "gwałcił", f: "gwałciła"}, lm: {m: "gwałcili", f: "gwałciły"}},
+                dzis: {lp: "gwałci", lm: "gwałcą"},
+                jutro: {lp: "będzie gwałcić", lm: "będą gwałcić"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "atakował", f: "atakowała"}, lm: {m: "atakowali", f: "atakowały"}},
+                dzis: {lp: "atakuje", lm: "atakują"},
+                jutro: {lp: "będzie atakować", lm: "będą atakować"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "donosił na", f: "donosiła na"}, lm: {m: "donosili na", f: "donosiły na"}},
+                dzis: {lp: "donosi na", lm: "donoszą na"},
+                jutro: {lp: "będzie donosić na", lm: "będą donosić na"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "obrażał", f: "obrażała"}, lm: {m: "obrażali", f: "obrażały"}},
+                dzis: {lp: "obraża", lm: "obrażają"},
+                jutro: {lp: "będzie obrażać", lm: "będą obrażać"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "okradał", f: "okradała"}, lm: {m: "okradali", f: "okradały"}},
+                dzis: {lp: "okrada", lm: "okradają"},
+                jutro: {lp: "będzie okradać", lm: "będą okradać"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "bezcześcił", f: "bezcześciła"}, lm: {m: "bezcześcili", f: "bezcześciły"}},
+                dzis: {lp: "bezcześci", lm: "bezczeszczą"},
+                jutro: {lp: "będzie bezcześcić", lm: "będą bezcześcić"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "blokował", f: "blokowała"}, lm: {m: "blokowali", f: "blokowały"}},
+                dzis: {lp: "blokuje", lm: "blokują"},
+                jutro: {lp: "będzie blokować", lm: "będą blokować"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "okłamywał", f: "okłamywała"}, lm: {m: "okłamywali", f: "okłamywały"}},
+                dzis: {lp: "okłamuje", lm: "okłamują"},
+                jutro: {lp: "będzie okłamywać", lm: "będą okłamywać"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "oszukiwał", f: "oszukiwała"}, lm: {m: "oszukiwali", f: "oszukiwały"}},
+                dzis: {lp: "oszukuje", lm: "oszukują"},
+                jutro: {lp: "będzie oszukiwać", lm: "będą oszukiwać"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "straszył", f: "straszyła"}, lm: {m: "straszyli", f: "straszyły"}},
+                dzis: {lp: "straszy", lm: "straszą"},
+                jutro: {lp: "będzie straszyć", lm: "będą straszyć"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "oczerniał", f: "oczerniała"}, lm: {m: "oczerniali", f: "oczerniały"}},
+                dzis: {lp: "oczernia", lm: "oczerniają"},
+                jutro: {lp: "będzie oczerniać", lm: "będą oczerniać"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "karcił", f: "karciła"}, lm: {m: "karcili", f: "karciły"}},
+                dzis: {lp: "karci", lm: "karcą"},
+                jutro: {lp: "będzie karcić", lm: "będą karcić"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "krzyczał na", f: "krzyczała na"}, lm: {m: "krzyczeli na", f: "krzyczały na"}},
+                dzis: {lp: "krzyczy na", lm: "krzyczą na"},
+                jutro: {lp: "będzie krzyczeć na", lm: "będą krzyczeć na"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "ciemiężył", f: "ciemiężyła"}, lm: {m: "ciemiężyli", f: "ciemiężyły"}},
+                dzis: {lp: "ciemięży", lm: "ciemiężą"},
+                jutro: {lp: "będzie ciemiężyć", lm: "będą ciemiężyć"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "zniszczył", f: "zniszczyła"}, lm: {m: "zniszczyli", f: "zniszczyły"}},
+                jutro: {lp: "zniszczy", lm: "zniszczą"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zabił", f: "zabiła"}, lm: {m: "zabili", f: "zabiły"}},
+                dzis: {lp: "zabija", lm: "zabijają"},
+                jutro: {lp: "zabije", lm: "zabiją"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zhańbił", f: "zhańbiła"}, lm: {m: "zhańbili", f: "zhańbiły"}},
+                jutro: {lp: "zhańbi", lm: "zhańbią"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zgwałcił", f: "zgwałciła"}, lm: {m: "zgwałcili", f: "zgwałciły"}},
+                jutro: {lp: "zgwałci", lm: "zgwałcą"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zaatakował", f: "zaatakowała"}, lm: {m: "zaatakowali", f: "zaatakowały"}},
+                jutro: {lp: "zaatakuje", lm: "zaatakują"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "doniósł na", f: "doniosła na"}, lm: {m: "donieśli na", f: "doniosły na"}},
+                dzis: {lp: "donosi na", lm: "donoszą na"},
+                jutro: {lp: "doniesie na", lm: "doniosą na"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "obraził", f: "obraziła"}, lm: {m: "obrazili", f: "obraziły"}},
+                dzis: {lp: "obraża", lm: "obrażają"},
+                jutro: {lp: "obrazi", lm: "obrażą"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "okradł", f: "okradła"}, lm: {m: "okradli", f: "okradły"}},
+                dzis: {lp: "okrada", lm: "okradają"},
+                jutro: {lp: "okradnie", lm: "okradną"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zbezcześcił", f: "zbezcześciła"}, lm: {m: "zbezcześcili", f: "zbezcześciły"}},
+                jutro: {lp: "zbezcześci", lm: "zbezczeszczą"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "zablokował", f: "zablokowała"}, lm: {m: "zablokowali", f: "zablokowały"}},
+                jutro: {lp: "zablokuje", lm: "zablokują"},
+                dopelnienie: BIERNIK
+            },
+            {
+                wczoraj: {lp: {m: "okłamał", f: "okłamała"}, lm: {m: "okłamali", f: "okłamały"}},
+                dzis: {lp: "okłamuje", lm: "okłamują"},
+                jutro: {lp: "okłamie", lm: "okłamią"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "oszukał", f: "oszukała"}, lm: {m: "oszukali", f: "oszukały"}},
+                dzis: {lp: "oszukuje", lm: "oszukują"},
+                jutro: {lp: "oszuka", lm: "oszukają"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "oczernił", f: "oczerniła"}, lm: {m: "oczernili", f: "oczerniły"}},
+                dzis: {lp: "oczernia", lm: "oczerniają"},
+                jutro: {lp: "oczerni", lm: "oczernią"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "skarcił", f: "skarciła"}, lm: {m: "skarcili", f: "skarciły"}},
+                jutro: {lp: "skarci", lm: "skarcą"},
+                dopelnienie: BIERNIK,
+                tylkoAktywneDopelnienie: true
+            },
+            {
+                wczoraj: {lp: {m: "osądził", f: "osądziła",}, lm: {m: "osądzili", f: "osądziły",}},
+                dzis: {lp: "osądza", lm: "osądzają"},
+                jutro: {lp: "osądzi", lm: "osądzą"},
+                dopelnienie: BIERNIK
+            },
+			
 
-    DOBRYM_CZYMS = ["podstawą", "opoką", "gwarancją", "nadzieją", "ratunkiem", "chlubą", "dumą", "przyjacielem",
-        "sukcesem", "oczkiem w głowie", "przyszłością", "sprzymierzeńcem", "jasnym punktem", "marzeniem", ];
-    ZLYM_CZYMS = ["zakałą", "wrogiem", "to nemesis", "zgubą", "zagładą", "oponentem", "przekleństwem", "porażką",
-        "kością w gardle", "solą w oku", "słabością", "złym snem", "koszmarem"];
-
-
-    DOBRE_DOPELNIENIE = {
-        biernik: ["Polskę", "Ojczyznę", "godło",
-            "społeczeństwo", "obywateli", "Polaków", "polskie kobiety", "posłów PiS",
-            "nasze dzieci", "nienarodzone dzieci", "Naród", "gospodarkę", "reformy", "Krzyż", "Kościół", "Papieża", "Matkę Boską",
-            "najuboższych", "emerytów", "rencistów", "rodziny wielodzietn", "katolickie rodziny", "normalne rodziny",
-            "wzrost gospodarczy", "wskaźniki ekonomiczne", "konstytucję", "ład publiczny",
-            "TVP", "Telewizję Polską", "dobrych ludzi", "normalnych ludzi", "tysiące Polaków", "miliony Polaków",
-            "500+", "młodych patriotów", "wrak tupolewa", "zmiany", "weteranów", "ofiary reprywatyzacji",
-            "rolników", "górników", "robotników", "pomnik smoleński", "Pana Kurskiego",
-            "gospodarkę węglową", "elektromobilność", "dobrą zmianę", "Patryka Jakiego",
+            {
+                wczoraj: {lp: {m: "zakałą", f: "zakałą"}, lm: {m: "zakałą", f: "zakałą"}},
+                dzis: {lp: "zakałą", lm: "zakałą"},
+                jutro: {lp: "zakałą", lm: "zakałą"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "wrogiem", f: "wrogiem"}, lm: {m: "wrogiem", f: "wrogiem"}},
+                dzis: {lp: "wrogiem", lm: "wrogiem"},
+                jutro: {lp: "wrogiem", lm: "wrogiem"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "to nemesis", f: "to nemesis"}, lm: {m: "to nemesis", f: "to nemesis"}},
+                dzis: {lp: "to nemesis", lm: "to nemesis"},
+                jutro: {lp: "to nemesis", lm: "to nemesis"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "zgubą", f: "zgubą"}, lm: {m: "zgubą", f: "zgubą"}},
+                dzis: {lp: "zgubą", lm: "zgubą"},
+                jutro: {lp: "zgubą", lm: "zgubą"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "zagładą", f: "zagładą"}, lm: {m: "zagładą", f: "zagładą"}},
+                dzis: {lp: "zagładą", lm: "zagładą"},
+                jutro: {lp: "zagładą", lm: "zagładą"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "oponentem", f: "oponentem"}, lm: {m: "oponentem", f: "oponentem"}},
+                dzis: {lp: "oponentem", lm: "oponentem"},
+                jutro: {lp: "oponentem", lm: "oponentem"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "przekleństwem", f: "przekleństwem"}, lm: {m: "przekleństwem", f: "przekleństwem"}},
+                dzis: {lp: "przekleństwem", lm: "przekleństwem"},
+                jutro: {lp: "przekleństwem", lm: "przekleństwem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "porażką", f: "porażką"}, lm: {m: "porażką", f: "porażką"}},
+                dzis: {lp: "porażką", lm: "porażką"},
+                jutro: {lp: "porażką", lm: "porażką"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "kością w gardle", f: "kością w gardle"}, lm: {m: "kością w gardle", f: "kością w gardle"}},
+                dzis: {lp: "kością w gardle", lm: "kością w gardle"},
+                jutro: {lp: "kością w gardle", lm: "kością w gardle"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "solą w oku", f: "solą w oku"}, lm: {m: "solą w oku", f: "solą w oku"}},
+                dzis: {lp: "solą w oku", lm: "solą w oku"},
+                jutro: {lp: "solą w oku", lm: "solą w oku"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "słabością", f: "słabością"}, lm: {m: "słabością", f: "słabością"}},
+                dzis: {lp: "słabością", lm: "słabością"},
+                jutro: {lp: "słabością", lm: "słabością"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "złym snem", f: "złym snem"}, lm: {m: "złym snem", f: "złym snem"}},
+                dzis: {lp: "złym snem", lm: "złym snem"},
+                jutro: {lp: "złym snem", lm: "złym snem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "koszmarem", f: "koszmarem"}, lm: {m: "koszmarem", f: "koszmarem"}},
+                dzis: {lp: "koszmarem", lm: "koszmarem"},
+                jutro: {lp: "koszmarem", lm: "koszmarem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+			
+			
+			// celownik dać odpór
         ],
-        dopelniacz: ["Polski", "Ojczyzny", "godła",
-            "społeczeństwa", "obywateli", "Polaków", "polskich kobiet", "posłów PiS",
-            "naszych dzieci", "nienarodzonych dzieci", "Narodu", "gospodarki", "reform", "Krzyża", "Kościoła", "Papieża", "Matki Boskiej",
-            "najuboższych", "emerytów", "rencistów", "rodzin wielodzietnych", "katolickich rodzin", "normalnych rodzin",
-            "wzrostu gospodarczego", "wskaźników ekonomicznych", "konstytucji", "ładu publicznego",
-            "TVP", "Telewizji Polskiej", "dobrych ludzi", "normalnych ludzi", "tysięcy Polaków", "milionów Polaków",
-            "500+", "młodych patriotów", "wraku tupolewa", "zmian", "weteranów", "ofiar reprywatyzacji",
-            "rolników", "górników", "robotników", "pomnika smoleńskiego", "Pana Kurskiego",
-            "gospodarki węglowej", "elektromobilności", "dobrej zmiany", "Patryka Jakiego",
-        ]
-    };
+        dobre: [
+            {
+    			wczoraj: {lp: {m: "poparł", f: "poparła"}, lm: {m: "poparli", f: "poparły"}},
+                dzis: {lp: "popiera", lm: "popierają"},
+                jutro: {lp: "poprze", lm: "poprą"},
+                dopelnienie: BIERNIK,
+            },
+            {            
+                wczoraj: {lp: {m: "wsparł", f: "wsparła"}, lm: {m: "wsparli", f: "wsparły"}},
+                dzis: {lp: "wspiera", lm: "wspierają"},
+                jutro: {lp: "wesprze", lm: "wesprą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "opłacał", f: "opłacała"}, lm: {m: "opłacali", f: "opłacały"}},
+                dzis: {lp: "opłaca", lm: "opłacają"},
+                jutro: {lp: "będzie opłacać", lm: "będą opłacać"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "opłacił", f: "opłaciła"}, lm: {m: "opłacili", f: "opłaciły"}},
+                jutro: {lp: "opłaci", lm: "opłacą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "chwalił", f: "chwaliła"}, lm: {m: "chwalili", f: "chwaliły"}},
+                dzis: {lp: "chwali", lm: "chwalą"},
+                jutro: {lp: "będzie chwalić", lm: "będą chwalić"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "pochwalił", f: "pochwaliła"}, lm: {m: "pochwalili", f: "pochwaliły"}},
+                jutro: {lp: "pochwali", lm: "pochwalą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "nagradzał", f: "nagradzała"}, lm: {m: "nagradzali", f: "nagradzały"}},
+                dzis: {lp: "nagradza", lm: "nagradzają"},
+                jutro: {lp: "będzie nagradzać", lm: "będą nagradzać"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "nagrodził", f: "nagrodziła"}, lm: {m: "nagrodzili", f: "nagrodziły"}},
+                jutro: {lp: "nagrodzi", lm: "nagrodzą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "uratował", f: "uratowała"}, lm: {m: "uratowali", f: "uratowały"}},
+                jutro: {lp: "uratuje", lm: "uratują"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "polecał", f: "polecała"}, lm: {m: "polecali", f: "polecały"}},
+                dzis: {lp: "poleca", lm: "polecają"},
+                jutro: {lp: "będzie polecać", lm: "będą polecać"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "wspomógł", f: "wspomogła"}, lm: {m: "wspomogli", f: "wspomogły"}},
+                dzis: {lp: "wspomaga", lm: "wspomagają"},
+                jutro: {lp: "wspomoże", lm: "wspomogą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "wzmocnił", f: "wzmocniła"}, lm: {m: "wzmocnili", f: "wzmocniły"}},
+                dzis: {lp: "wzmacnia", lm: "wzmacniają"},
+                jutro: {lp: "wzmocni", lm: "wzmocnią"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "sponsorował", f: "sponsorowała"}, lm: {m: "sponsorowali", f: "sponsorowały"}},
+                dzis: {lp: "sponsoruje", lm: "sponsorują"},
+                jutro: {lp: "zasponsoruje", lm: "zasponsorują"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "finansował", f: "finansowała"}, lm: {m: "finansowali", f: "finansowały"}},
+                dzis: {lp: "finansuje", lm: "finansują"},
+                jutro: {lp: "sfinansuje", lm: "sfinansują"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "subsydiował", f: "subsydiowała"}, lm: {m: "subsydiowali", f: "subsydiowały"}},
+                dzis: {lp: "subsydiuje", lm: "subsydiują"},
+                jutro: {lp: "zasubsydiuje", lm: "zasubsydiują"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "zasilał", f: "zasilała"}, lm: {m: "zasilali", f: "zasilały"}},
+                dzis: {lp: "zasila", lm: "zasilają"},
+                jutro: {lp: "zasili", lm: "zasilą"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "wysławiał", f: "wysławiała"}, lm: {m: "wysławiali", f: "wysławiały"}},
+                dzis: {lp: "wysławia", lm: "wysławiają"},
+                jutro: {lp: "będzie wysławiać", lm: "będą wysławiać"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "wielbił", f: "wielbiła"}, lm: {m: "wielbili", f: "wielbiły"}},
+                dzis: {lp: "wielbi", lm: "wielbią"},
+                jutro: {lp: "będzie wielbić", lm: "będą wielbić"},
+                dopelnienie: BIERNIK,
+            },
+            {
+                wczoraj: {lp: {m: "przyniósł", f: "przyniosła"}, lm: {m: "przynieśli", f: "przyniosły"}},
+                dzis: {lp: "przynosi", lm: "przynoszą"},
+                jutro: {lp: "przyniesie", lm: "przyniosą"},
+                dopelnienie: BIERNIK,
+            },                        
 
-    ZLE_DOPELNIENIE = {
-        biernik: ["Unię", "Izrael", "zachód", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-            "ateistów", "feministki", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistyczne złogi", "złodziejstwo", "złodziei", "aferzystów",
-            "gwałcicieli", "Tuska", "ubecję", "ideologię gender",
-            "bezrobocie", "dług publiczny", "zadłużenie", "biedę", "korupcję", "kolesiostwo",
-            "kolesiów", "byłych agentów", "cywilizację śmierci", "kraje zachodu", "zachodnią europę",
-            "media polskojęzyczne", "czarny protest", "stalinowskich sędziów", "beneficjentów transformacji", "liberałów",
-            "aferę podsłuchową", "aferę hazardową", "aferę Amber Gold", "aferę melioracyjną",
-        ],
-        dopelniacz: ["Unii", "Izraela", "zachodu", "wrogów Ojczyzny", "wrogów Narodu", "wrogów Polski", "wrogów Kościoła",
-            "ateistów", "feministek", "Sorosa", "masonów", "gejów", "esbeków", "komunistów", "komunistycznych złogów", "złodziejstwa", "złodziei", "aferzystów",
-            "gwałcicieli", "Tuska", "ubecji", "ideologii gender",
-            "bezrobocia", "długu publicznego", "zadłużenia", "biedy", "korupcji", "kolesiostwa",
-            "kolesiów", "byłych agentów", "cywilizacji śmierci", "krajów zachodu", "zachodniej europy",
-            "mediów polskojęzycznych", "czarnego protestu", "stalinowskich sędziów", "beneficjentów transformacji", "liberałów",
-            "afery podsłuchowej", "afery hazardowej", "afery Amber Gold", "afery melioracyjnej",
-        ]
+            {
+                wczoraj: {lp: {m: "podstawą", f: "podstawą"}, lm: {m: "podstawą", f: "podstawą"}},
+                dzis: {lp: "podstawą", lm: "podstawą"},
+                jutro: {lp: "podstawą", lm: "podstawą"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "opoką", f: "opoką"}, lm: {m: "opoką", f: "opoką"}},
+                dzis: {lp: "opoką", lm: "opoką"},
+                jutro: {lp: "opoką", lm: "opoką"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "gwarancją", f: "gwarancją"}, lm: {m: "gwarancją", f: "gwarancją"}},
+                dzis: {lp: "gwarancją", lm: "gwarancją"},
+                jutro: {lp: "gwarancją", lm: "gwarancją"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "nadzieją", f: "nadzieją"}, lm: {m: "nadzieją", f: "nadzieją"}},
+                dzis: {lp: "nadzieją", lm: "nadzieją"},
+                jutro: {lp: "nadzieją", lm: "nadzieją"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "ratunkiem", f: "ratunkiem"}, lm: {m: "ratunkiem", f: "ratunkiem"}},
+                dzis: {lp: "ratunkiem", lm: "ratunkiem"},
+                jutro: {lp: "ratunkiem", lm: "ratunkiem"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "chlubą", f: "chlubą"}, lm: {m: "chlubą", f: "chlubą"}},
+                dzis: {lp: "chlubą", lm: "chlubą"},
+                jutro: {lp: "chlubą", lm: "chlubą"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "dumą", f: "dumą"}, lm: {m: "dumą", f: "dumą"}},
+                dzis: {lp: "dumą", lm: "dumą"},
+                jutro: {lp: "dumą", lm: "dumą"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "przyjacielem", f: "przyjacielem"}, lm: {m: "przyjacielem", f: "przyjacielem"}},
+                dzis: {lp: "przyjacielem", lm: "przyjacielem"},
+                jutro: {lp: "przyjacielem", lm: "przyjacielem"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "sukcesem", f: "sukcesem"}, lm: {m: "sukcesem", f: "sukcesem"}},
+                dzis: {lp: "sukcesem", lm: "sukcesem"},
+                jutro: {lp: "sukcesem", lm: "sukcesem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "oczkiem w głowie", f: "oczkiem w głowie"}, lm: {m: "oczkiem w głowie", f: "oczkiem w głowie"}},
+                dzis: {lp: "oczkiem w głowie", lm: "oczkiem w głowie"},
+                jutro: {lp: "oczkiem w głowie", lm: "oczkiem w głowie"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "przyszłością", f: "przyszłością"}, lm: {m: "przyszłością", f: "przyszłością"}},
+                dzis: {lp: "przyszłością", lm: "przyszłością"},
+                jutro: {lp: "przyszłością", lm: "przyszłością"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "sprzymierzeńcem", f: "sprzymierzeńcem"}, lm: {m: "sprzymierzeńcem", f: "sprzymierzeńcem"}},
+                dzis: {lp: "sprzymierzeńcem", lm: "sprzymierzeńcem"},
+                jutro: {lp: "sprzymierzeńcem", lm: "sprzymierzeńcem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
+            {
+                wczoraj: {lp: {m: "jasnym punktem", f: "jasnym punktem"}, lm: {m: "jasnym punktem", f: "jasnym punktem"}},
+                dzis: {lp: "jasnym punktem", lm: "jasnym punktem"},
+                jutro: {lp: "jasnym punktem", lm: "jasnym punktem"},
+                dopelnienie: DOPELNIACZ,
+            },
+            {
+                wczoraj: {lp: {m: "marzeniem", f: "marzeniem"}, lm: {m: "marzeniem", f: "marzeniem"}},
+                dzis: {lp: "marzeniem", lm: "marzeniem"},
+                jutro: {lp: "marzeniem", lm: "marzeniem"},
+                dopelnienie: DOPELNIACZ,
+                podmiotWDopelniaczu: true
+            },
 
-    };
+
+
+			]
+    }
+
 
 
     deduplicateQueue = []; // queue with last random words so we don't generate duplicates
-    deduplicateQueueMaxSize = 20;
-    deduplicatePrefixSize = 4;
+    deduplicateQueueMaxSize = 30;
 
     function random(words) {
         let word = randomElem(words);
-        while (deduplicateQueue.includes(word.substring(0, deduplicatePrefixSize))) {
-            word = randomElem(words)
+        while (deduplicateQueue.includes(word)) {
+			word = randomElem(words)
         }
-        deduplicateQueue.push(word.substring(0, deduplicatePrefixSize));
+        deduplicateQueue.push(word);
         if (deduplicateQueue.length > deduplicateQueueMaxSize) {
             deduplicateQueue.shift()
         }
-
-        return word + " "
+        return word
     }
 
     function randomInt(max) {
         return Math.floor(Math.random() * max);
     }
 
-    function losowyRodzaj(podmioty) {
-        let mCount = podmioty.lp.m.length + podmioty.lm.m.length;
-        let fCount = podmioty.lp.f.length + podmioty.lm.f.length;
-        return randomInt(mCount + fCount) < mCount ? M : F;
-    }
-
-    function losowaLiczba(podmioty, rodzaj) {
-        let lpCount = podmioty.lp[rodzaj].length;
-        let lmCount = podmioty.lm[rodzaj].length;
-        return randomInt(lpCount + lmCount) < lpCount ? LP : LM;
-    }
-
-    function podmiot(podmioty, liczba, rodzaj) {
-        if (rodzaj) {
-            return random(podmioty[liczba][rodzaj])
-        } else {
-            return random(podmioty[liczba].m.concat(podmioty[liczba].f))
-        }
-    }
-
-    function zlyPodmiot(liczba, rodzaj) {
-        return podmiot(ZLY_PODMIOT, liczba, rodzaj);
-    }
-
-    function dobryPodmiot(liczba, rodzaj) {
-        return podmiot(DOBRY_PODMIOT, liczba, rodzaj);
-    }
-
-    function orzeczenie(orzeczenia, liczba, przypadek, czas, rodzaj) {
-        if (czas === WCZORAJ) {
-            return random(orzeczenia[przypadek].wczoraj[liczba][rodzaj])
-        } else {
-            return random(orzeczenia[przypadek][czas][liczba])
-        }
-    }
-
-    function zleOrzeczenie(liczba, przypadek, czas, rodzaj) {
-        return orzeczenie(ZLE_ORZECZENIE, liczba, przypadek, czas, rodzaj)
-    }
-
-    function dobreOrzeczenie(liczba, przypadek, czas, rodzaj) {
-        return orzeczenie(DOBRE_ORZECZENIE, liczba, przypadek, czas, rodzaj)
-    }
-
-    function dobreDopelnienie(przypadek) {
-        return random(DOBRE_DOPELNIENIE[przypadek])
-    }
-
-    function zleDopelnienie(przypadek) {
-        return random(ZLE_DOPELNIENIE[przypadek])
-    }
-
     function capitalizeFirstLetter(s) {
         return s.charAt(0).toUpperCase() + s.slice(1)
     }
 
-    function randomText() {
-        return capitalizeFirstLetter(randomTextWithSpaces().trim())
+	function losowyPodmiot() {
+		return random(RZECZOWNIKI.dobre.aktywne.concat(RZECZOWNIKI.zle.aktywne))
+	}
+	
+	function losoweOrzeczenie(charakterOrzeczenia, czas) {
+		let result = random(CZASOWNIKI[charakterOrzeczenia])
+		while (!(result[czas])) {
+			result = random(CZASOWNIKI[charakterOrzeczenia])
+		}
+		return result
+	}
+	
+	function losoweDopelnienie(charakterDopelnienia, orzeczenie) {
+		let wszystkieDopelnienia = RZECZOWNIKI[charakterDopelnienia].aktywne;
+		if (!orzeczenie.tylkoAktywneDopelnienie) {
+			wszystkieDopelnienia = wszystkieDopelnienia
+			.concat(RZECZOWNIKI[charakterDopelnienia].pasywne)
+			.concat(RZECZOWNIKI[charakterDopelnienia].pasywne) // for bigger passive chance
+		}
+		let result = random(wszystkieDopelnienia)
+		return result
+	}
+
+	function randomText() {
+		let result = null;
+		while(result == null) {
+			result = randomTextOrNull();
+		}
+		return result;
+	}
+	
+    function randomTextOrNull() {
+		let podmiot = losowyPodmiot();
+		
+		let charakterOrzeczenia;
+		let charakterDopelnienia; 
+		if (podmiot.charakter == DOBRY) {
+			if (Math.random() < 0.33) {
+				charakterOrzeczenia = DOBRY;
+				charakterDopelnienia = DOBRY;
+			} else {
+				charakterOrzeczenia = ZLY;
+				charakterDopelnienia = ZLY;
+			}
+		} else {
+			if (Math.random() < 0.33) {
+				charakterOrzeczenia = DOBRY;
+				charakterDopelnienia = ZLY;
+			} else {
+				charakterOrzeczenia = ZLY;
+				charakterDopelnienia = DOBRY;
+			}
+		}
+		
+		let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
+		let orzeczenie = losoweOrzeczenie(charakterOrzeczenia, czas)		
+		let dopelnienie = losoweDopelnienie(charakterDopelnienia, orzeczenie)
+
+		let text = formatPasek(czas, podmiot, orzeczenie, dopelnienie);
+		
+		const MAX_LENGTH = 50;
+		if (text.length > MAX_LENGTH) {
+			return null;
+		}
+		
+		return text;
     }
-
-    function randomTextZlyPodmiot() {
-        let rodzaj = losowyRodzaj(ZLY_PODMIOT);
-        let liczba = losowaLiczba(ZLY_PODMIOT, rodzaj);
-        let przypadek = "biernik";
-        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
-
-        let k = Math.random();
-
-        if (k < 0.1) {
-            return zlyPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
-        } else if (k < 0.2) {
-            return zlyPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
-        } else if (k < 0.5) {
-            return zlyPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
-        } else {
-            return zlyPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
-        }
-    }
-
-    function randomTextDobryPodmiot() {
-        let rodzaj = losowyRodzaj(DOBRY_PODMIOT);
-        let liczba = losowaLiczba(DOBRY_PODMIOT, rodzaj);
-        let przypadek = "biernik";
-        let czas = randomElem([WCZORAJ, WCZORAJ, DZIS, DZIS, DZIS, JUTRO]);
-
-        let k = Math.random();
-
-        if (k < 0.1) {
-            return dobryPodmiot(liczba, rodzaj) + random(DOBRYM_CZYMS) + dobreDopelnienie(DOPELNIACZ);
-        } else if (k < 0.2) {
-            return dobryPodmiot(liczba, rodzaj) + random(ZLYM_CZYMS) + zleDopelnienie(DOPELNIACZ);
-        } else if (k < 0.5) {
-            return dobryPodmiot(liczba, rodzaj) + zleOrzeczenie(liczba, przypadek, czas, rodzaj) + zleDopelnienie(przypadek);
-        } else {
-            return dobryPodmiot(liczba, rodzaj) + dobreOrzeczenie(liczba, przypadek, czas, rodzaj) + dobreDopelnienie(przypadek);
-        }
-    }
-
-    function randomTextWithSpaces() {
-        if (Math.random() < 0.3) {
-            return randomTextDobryPodmiot();
-        } else {
-            return randomTextZlyPodmiot();
-        }
-    }
-
+	
+	function formatPasek(czas, podmiot, orzeczenie, dopelnienie) {
+		
+		let orzeczenieS;
+		if (czas == WCZORAJ) {
+			orzeczenieS = orzeczenie[czas][podmiot.liczba][podmiot.rodzaj]
+		} else {
+			orzeczenieS = orzeczenie[czas][podmiot.liczba]
+		}
+		
+		if (orzeczenie.podmiotWDopelniaczu) {
+			return dopelnienie.m + " " + orzeczenieS + " " + podmiot.d
+		} else {
+			return podmiot.m + " " + orzeczenieS + " " + dopelnienie[orzeczenie.dopelnienie]
+		}
+		
+	}
 
     let style = getParam("style", "wiadomosci");
     let background = getParam("background", "krzysztof");
